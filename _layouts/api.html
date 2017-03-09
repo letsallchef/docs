@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+{% include api-sidebar.html %}
+<div class="pusher">
+	<header style="background-image: url('{{ site.baseurl }}/uploads/pages/letsallchef-kitchen.jpg');">
+		<h1>{{ site.title }} - {{ page.title }}</h1>
+		<button class="ui icon button" id="sidebar-button"> <i class="icon sidebar"></i>Menu</button>
+	</header>
+	<div class="ui container">
+		{{ content }}
+	</div>
+</div>
+{% include footer.html %}
+{% include scripts.html %}
+<script>
+	$('#sidebar-button').on('click', function() {
+		$('#api-sidebar').sidebar('toggle');
+	})
+</script>
