@@ -1,70 +1,87 @@
 <div class="ui vertical inverted sidebar menu left" id="api-sidebar">
 	<div class="item">
-		<a href="{{site.baseurl}}/recipes" class="header">Recipes</a>
+		<a href="{{ site.baseurl }}/" class="header">Home</a>
+	</div>
+	<div class="item">
+		<a href="{{ site.baseurl }}/recipes" class="header">Recipes</a>
 		<div class="menu">
-			<a href="{{site.baseurl}}/recipes#add-recipe" class="item">Add Recipe</a>
-			<a href="{{site.baseurl}}/recipes" class="item">List Your Recipes</a>
-			<a href="{{site.baseurl}}/recipes" class="item">List User Recipes</a>
-			<a href="{{site.baseurl}}/recipes" class="item">List All Public Recipes</a>
-			<a href="{{site.baseurl}}/recipes" class="item">Get Recipe</a>
-			<a href="{{site.baseurl}}/recipes" class="item">Edit Recipe</a>
-			<a href="{{site.baseurl}}/recipes" class="item">Comment Recipe</a>
-			<a href="{{site.baseurl}}/recipes" class="item">List Recipe Contributors</a>
-			<a href="{{site.baseurl}}/recipes" class="item">Delete Recipe</a>
+			<a href="{{ site.baseurl }}/recipes#add-recipe" class="item">Add Recipe</a>
+			<a href="{{ site.baseurl }}/recipes#list-my-recipes" class="item">List My Recipes</a>
+			<a href="{{ site.baseurl }}/recipes#list-user-recipes" class="item">List User Recipes</a>
+			<a href="{{ site.baseurl }}/recipes#list-recipes" class="item">List Recipes</a>
+			<a href="{{ site.baseurl }}/recipes#search-recipes" class="item">Search Recipes</a>
+			<a href="{{ site.baseurl }}/recipes#get-recipe" class="item">Get Recipe</a>
+			<a href="{{ site.baseurl }}/recipes#favourite-a-recipe" class="item">Favourite A Recipe</a>
+			<a href="{{ site.baseurl }}/recipes#edit-recipe" class="item">Edit Recipe</a>
+			<a href="{{ site.baseurl }}/recipes#comment-recipe" class="item">Comment Recipe</a>
+			<a href="{{ site.baseurl }}/recipes#report-recipe-" class="item">Report Recipe </a>
+			<a href="{{ site.baseurl }}/recipes#delete-recipe" class="item">Delete Recipe</a>
 		</div>
 	</div>
 	<div class="item">
 		<a href="{{ site.baseurl }}/groceries" class="header">Groceries</a>
 		<div class="menu">
-			<a href="{{ site.baseurl }}/groceries" class="item">List Your Groceries</a>
-			<a href="{{ site.baseurl }}/groceries" class="item">List User Groceries</a>
-			<a href="{{ site.baseurl }}/groceries" class="item">List All Public Groceries</a>
-			<a href="{{ site.baseurl }}/groceries" class="item">Create Grocery</a>
-			<a href="{{ site.baseurl }}/groceries" class="item">Get Grocery</a>
-			<a href="{{ site.baseurl }}/groceries" class="item">Edit Grocery</a>
-			<a href="{{ site.baseurl }}/groceries" class="item">Delete Grocery</a>
+			<a href="{{ site.baseurl }}/groceries#add-grocery" class="item">Add Grocery</a>
+			<a href="{{ site.baseurl }}/groceries#list-groceries" class="item">List Groceries</a>
+			<a href="{{ site.baseurl }}/groceries#search-groceries" class="item">Search Groceries</a>
+			<a href="{{ site.baseurl }}/groceries#get-grocery" class="item">Get Grocery</a>
+			<a href="{{ site.baseurl }}/groceries#edit-grocery" class="item">Edit Grocery</a>
+			<a href="{{ site.baseurl }}/groceries#add-grocery-to-shopping-list" class="item">Add Grocery To Shopping List</a>
+			<a href="{{ site.baseurl }}/groceries#report-grocery" class="item">Report Grocery</a>
+			<a href="{{ site.baseurl }}/groceries#delete-grocery" class="item">Delete Grocery</a>
 		</div>
 	</div>
 	<div class="item">
 		<a href="{{ site.baseurl }}/stores" class="header">Grocery Store</a>
 		<div class="menu">
-			<a href="{{ site.baseurl }}/stores" class="item">Add Grocery</a>
-			<a href="{{ site.baseurl }}/stores" class="item">List Groceries</a>
-			<a href="{{ site.baseurl }}/stores" class="item">Get Grocery</a>
-			<a href="{{ site.baseurl }}/stores" class="item">Edit Grocery</a>
-			<a href="{{ site.baseurl }}/stores" class="item">Delete Grocery</a>
+			<a href="{{ site.baseurl }}/stores#add-store" class="item">Add Store</a>
+			<a href="{{ site.baseurl }}/stores#list-stores" class="item">List Stores</a>
+			<a href="{{ site.baseurl }}/stores#search-stores" class="item">Search Stores</a>
+			<a href="{{ site.baseurl }}/stores#get-store" class="item">Get Store</a>
+			<a href="{{ site.baseurl }}/stores#edit-store" class="item">Edit Store</a>
+			<a href="{{ site.baseurl }}/stores#order-grocery" class="item">Order Grocery</a>
+			<a href="{{ site.baseurl }}/stores#comment-store" class="item">Comment Store</a>
+			<a href="{{ site.baseurl }}/stores#report-store" class="item">Report Store</a>
+			<a href="{{ site.baseurl }}/stores#delete-store" class="item">Delete Store</a>
 		</div>
 	</div>
 	<div class="item">
 		<a href="{{ site.baseurl }}/restaurants" class="header">Restaurants</a>
 		<div class="menu">
-			<a href="{{ site.baseurl }}/restaurants" class="item">List Your Restaurants</a>
-			<a href="{{ site.baseurl }}/restaurants" class="item">List All Public Restaurants</a>
-			<a href="{{ site.baseurl }}/restaurants" class="item">Create Restaurant</a>
-			<a href="{{ site.baseurl }}/restaurants" class="item">Get Restaurant</a>
-			<a href="{{ site.baseurl }}/restaurants" class="item">Edit Restaurant</a>
-			<a href="{{ site.baseurl }}/restaurants" class="item">List Menu</a>
-			<a href="{{ site.baseurl }}/restaurants" class="item">Delete Restaurant</a>
+			<a href="{{ site.baseurl }}/restaurants#add-restaurant" class="item">Add Restaurant</a>
+			<a href="{{ site.baseurl }}/restaurants#list-restaurants" class="item">List Restaurants</a>
+			<a href="{{ site.baseurl }}/restaurants#search-restaurants" class="item">Search Restaurants</a>
+			<a href="{{ site.baseurl }}/restaurants#get-restaurant" class="item">Get Restaurant</a>
+			<a href="{{ site.baseurl }}/restaurants#edit-restaurant" class="item">Edit Restaurant</a>
+			<a href="{{ site.baseurl }}/restaurants#order-recipe" class="item">Order Recipe</a>
+			<a href="{{ site.baseurl }}/restaurants#comment-restaurant" class="item">Comment Restaurant</a>
+			<a href="{{ site.baseurl }}/restaurants#report-restaurant" class="item">Report Restaurant</a>
+			<a href="{{ site.baseurl }}/restaurants#delete-restaurant" class="item">Delete Restaurant</a>
 		</div>
 	</div>
 	<div class="item">
 		<a href="{{ site.baseurl }}/users" class="header">Users</a>
 		<div class="menu">
-			<a href="{{ site.baseurl }}/users" class="item">Get A Single User</a>
-			<a href="{{ site.baseurl }}/users" class="item">Get The Authenticated User</a>
-			<a href="{{ site.baseurl }}/users" class="item">Update The Authenticated User</a>
-			<a href="{{ site.baseurl }}/users" class="item">Get All Users</a>
+		<a href="{{ site.baseurl }}/users#add-user" class="item">Add User</a>
+		<a href="{{ site.baseurl }}/users#list-users" class="item">List Users</a>
+		<a href="{{ site.baseurl }}/users#search-users" class="item">Search Users</a>
+		<a href="{{ site.baseurl }}/users#get-user" class="item">Get User</a>
+		<a href="{{ site.baseurl }}/users#follow-a-user" class="item">Follow A User</a>
+		<a href="{{ site.baseurl }}/users#unfollow-a-user" class="item">Unfollow A User</a>
+		<a href="{{ site.baseurl }}/users#edit-user" class="item">Edit User</a>
+		<a href="{{ site.baseurl }}/users#report-user" class="item">Report User </a>
+		<a href="{{ site.baseurl }}/users#delete-user" class="item">Delete User</a>
 		</div>
 	</div>
 	<div class="item">
 		<a href="{{ site.baseurl }}/orders" class="header">Orders</a>
 		<div class="menu">
-			<a href="{{ site.baseurl }}/orders" class="item">List My Orders</a>
-			<a href="{{ site.baseurl }}/orders" class="item">List Store Orders</a>
-			<a href="{{ site.baseurl }}/orders" class="item">Create Order</a>
-			<a href="{{ site.baseurl }}/orders" class="item">Get Order</a>
-			<a href="{{ site.baseurl }}/orders" class="item">Edit Order</a>
-			<a href="{{ site.baseurl }}/orders" class="item">Delete Order</a>
+			<a href="{{ site.baseurl }}/orders#list-my-orders" class="item">List My Orders</a>
+			<a href="{{ site.baseurl }}/orders#list-store-orders" class="item">List Store Orders</a>
+			<a href="{{ site.baseurl }}/orders#list-restaurant-orders" class="item">List Restaurant Orders</a>
+			<a href="{{ site.baseurl }}/orders#get-order" class="item">Get Order</a>
+			<a href="{{ site.baseurl }}/orders#edit-order" class="item">Edit Order</a>
+			<a href="{{ site.baseurl }}/orders#delete-order" class="item">Delete Order</a>
 		</div>
 	</div>
 </div>
