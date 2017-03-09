@@ -10,7 +10,7 @@ title: "API Documentation"
 				<img src="{{ site.baseurl }}/uploads/posts/{{ api.cover }}">
 			</div>
 			<div class="content">
-				<a href="{{ api.url }}" class="header">{{ api.title }}</a>
+				<a href="{{ site.baseurl }}{{ api.url }}" class="header">{{ api.title }}</a>
 				<div class="meta">
 					<span class="date">Last Updated : {{ api.date | date_to_long_string }}</span>
 				</div>
