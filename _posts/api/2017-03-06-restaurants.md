@@ -8,4 +8,20 @@ layout: api
 Add, update and list restaurants.
 <!--more-->
 
-# Restaurants
+## Add Restaurant
+
+## List Restaurants
+
+## Search Restaurants
+
+## Get Restaurant
+
+## Edit Restaurant
+
+## Order Recipe
+
+## Comment Restaurant
+
+## Report Restaurant
+
+## Delete Restaurant

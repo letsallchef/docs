@@ -7,14 +7,18 @@ layout: api
 ---
 <!--more-->
 
-# Groceries
-
-## Create Grocery
+## Add Grocery
 
 ## List Groceries
+
+## Search Groceries
 
 ## Get Grocery
 
 ## Edit Grocery
+
+## Add Grocery To Shopping List
+
+## Report Grocery
 
 ## Delete Grocery
