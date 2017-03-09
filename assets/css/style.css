@@ -12,3 +12,14 @@ header{
 	top: 10px;
 	left: 10px;
 }
+figure.highlight{
+	margin: 10px 0px;
+	border-radius: 4px;
+	background: #DDD;
+	padding: 2px 10px;
+}
+.highlighter-rouge{
+	padding:10px;
+	/* border-radius: 4px; */
+	background: #DDD;
+}
