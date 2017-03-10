@@ -13,9 +13,9 @@ header h1 span{
 	background: rgba(0, 0, 0, 0.4);
 }
 #sidebar-button{
-	position: absolute;
-	top: 10px;
-	left: 10px;
+	position: fixed;
+	top: 30%;
+	left: 0px;
 	background: rgba(225, 225, 225, 0.6)
 }
 #goto-top{
