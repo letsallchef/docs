@@ -33,3 +33,23 @@ figure.highlight{
 	padding:10px;
 	background: #DDD;
 }
+
+/* Table */
+table{
+	border-radius: 2px;
+	border: 1px solid #BBB;
+	margin: 4px 0px;
+}
+td,th{
+	padding: 8px;
+}
+thead{
+	text-align: left;
+}
+table tbody tr:nth-child(odd){
+	background-color: #F3F3F3;
+}
+tr>th,
+tr>td{
+	border-left: 1px solid #BBB; 
+}
