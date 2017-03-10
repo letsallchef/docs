@@ -113,7 +113,7 @@ layout: api
 
 ## Edit Grocery
 
-`PATCH /groceries`
+`PUT /groceries`
 
 **Request**
 
@@ -145,7 +145,7 @@ layout: api
 
 ## Add Grocery To Shopping List
 
-`PUT /groceries/:grocery_id/list`
+`POST /groceries/:grocery_id/list`
 
 **Response**
 
@@ -154,7 +154,7 @@ layout: api
 
 ## Remove Grocery From Shopping List
 
-`PUT /groceries/:grocery_id/unlist`
+`DELETE /groceries/:grocery_id/unlist`
 
 **Response**
 
@@ -163,7 +163,7 @@ layout: api
 
 ## Report Grocery
 
-`PUT /groceries/:grocery_id`
+`POST /groceries/:grocery_id`
 
 **Parameters**
 
