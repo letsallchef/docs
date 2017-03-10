@@ -1,6 +1,7 @@
 ---
 layout: api
 title: "API Documentation"
+permalink: /api-documentation
 ---
 <div class="ui stackable grid container">
 	{% for api in site.categories.api %}
