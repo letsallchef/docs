@@ -11,7 +11,7 @@ layout: api
 
 `POST /groceries`
 
-**Request**
+**Paramerts**
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -60,9 +60,18 @@ layout: api
 ]
 {% endhighlight %}
 
+
 ## Search Groceries
 
 `GET /groceries`
+
+**Parameters**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | String | Title of grocery. |
+| type | [String] | Type of grocery. |
+| categories | [String] | Grocery categories. |
 
 **Response**
 
