@@ -41,9 +41,66 @@ layout: api
 
 ## List Groceries
 
+`GET /groceries`
+
+**Response**
+
+{% highlight json %}
+[
+	{
+		"_id": ID
+		"title": String
+		"description": String
+		"also_known_as": String
+		"image": String
+		"metric_units": [String]
+		"type": [String]
+		"categories": [String]
+	}
+]
+{% endhighlight %}
+
 ## Search Groceries
 
+`GET /groceries`
+
+**Response**
+
+{% highlight json %}
+[
+	{
+		"_id": ID
+		"title": String
+		"description": String
+		"also_known_as": String
+		"image": String
+		"metric_units": [String]
+		"type": [String]
+		"categories": [String]
+	}
+]
+{% endhighlight %}
+
+
 ## Get Grocery
+
+`GET /groceries/:grocery_id`
+
+**Response**
+
+{% highlight json %}
+{
+	"_id": ID
+	"title": String
+	"description": String
+	"also_known_as": String
+	"image": String
+	"metric_units": [String]
+	"type": [String]
+	"categories": [String]
+}
+{% endhighlight %}
+
 
 ## Edit Grocery
 
