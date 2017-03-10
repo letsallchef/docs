@@ -169,3 +169,9 @@ layout: api
 
 
 ## Delete Grocery
+
+`DELETE /groceries/:grocery_id`
+
+**Response**
+
+`Status 204`
