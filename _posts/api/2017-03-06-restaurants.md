@@ -10,8 +10,6 @@ Add, update and list restaurants.
 
 ## Add Restaurant
 
-## List Restaurants
-
 ## Search Restaurants
 
 ## Get Restaurant
