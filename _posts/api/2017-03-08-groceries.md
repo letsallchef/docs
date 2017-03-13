@@ -18,7 +18,7 @@ layout: api
 | title | String | Title of grocery. |
 | description | String | Brief description of grocery. |
 | also_known_as | String | Alternate name of grocery. |
-| image | File | Image of grocery. |
+| image | file | Image of grocery. |
 | metric_units | [String] | Unit of grocery. |
 | type | [String] | Type of grocery. |
 | categories | [String] | Grocery categories. |
@@ -100,7 +100,7 @@ layout: api
 | title | String | Title of grocery. |
 | description | String | Brief description of grocery. |
 | also_known_as | String | Alternate name of grocery. |
-| image | File | Image of grocery. |
+| image | file | Image of grocery. |
 | metric_units | [String] | Unit of grocery. |
 | type | [String] | Type of grocery. |
 | categories | [String] | Grocery categories. |

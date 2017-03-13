@@ -10,7 +10,86 @@ Add, update and list restaurants.
 
 ## Add Restaurant
 
-## Search Restaurants
+`POST /restaurants`
+
+**Parameters**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | String | Name of the restaurant. |
+| logo | String | Logo of the restaurant |
+| cover | file | Cover image of the restaurant. |
+| url | String | User friendly URL of the restaurant. |
+| type | [String] | Type of the restaurant. |
+| categories | [String] | Categories of the restaurant. |
+| accepts_reservations | String | Whether the restaurant accepts reservations. |
+| serves_cuisine | [String] | List of cuisines served. |
+| star_rating | String | Star rating of the restaurant. |
+| opening_hours | [String] | Opening Hours. |
+| payment_methods | [String] | List of payment methods accepted. |
+| do_home_delivery | Boolean | Whether home delivered. |
+| price_range | [String] | Price range of items. |
+| photos | [file] | List of photos. |
+| can_home_deliver | Boolean | Whether home delivers food. |
+| address | {} | Address details. |
+| contact | {} | Contact details. |
+
+**Response**
+
+{% highlight json %}
+{
+	"_id": ID,
+	"name": String,
+	"logo": String,
+	"url": String,
+	"type": [String],
+	"categories": [String],
+	"accepts_reservations": String,
+	"serves_cuisine": [String],
+	"star_rating": String,
+	"opening_hours": [String],
+	"payment_methods": [String],
+	"do_home_delivery": Boolean,
+	"price_range": [String],
+	"photos": [String],
+	"can_home_delever": Boolean,
+	"address": {       
+	    "addressLine1": String,
+	    "addressLine2": String,
+	    "landmark": String,
+	    "state": String,
+	    "city": String,
+	    "district": String,
+	    "country": String,
+	    "geo": {
+	        "latitude": Number,
+	        "longitude": Number
+	    }
+	},
+	"contact": {
+	    "email": String,
+	    "phone": String
+	},
+	"owner": {
+	    "user_id": ID,
+	    "user_avatar": String,
+	    "user_username": String,
+	    "user_first_name": String,
+	    "user_rating": Number
+	},
+	"comments": {
+	    "user_id": ID,
+	    "user_avatar": String,
+	    "user_username": String,
+	    "user_first_name": String,
+	    "user_rating": Number,
+	    "comment": String,
+	    "rating": Number
+	}
+}
+{% endhighlight %}
+
+## Search Restaurants	
 
 ## Get Restaurant
 
