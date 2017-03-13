@@ -16,7 +16,7 @@ Add, update and list restaurants.
 
 | Name | Type | Description |
 | --- | --- | --- |
-| name | String | Name of the restaurant. |
+| title | String | Name of the restaurant. |
 | logo | String | Logo of the restaurant |
 | cover | file | Cover image of the restaurant. |
 | url | String | User friendly URL of the restaurant. |
@@ -39,7 +39,7 @@ Add, update and list restaurants.
 {% highlight json %}
 {
 	"_id": ID,
-	"name": String,
+	"title": String,
 	"logo": String,
 	"url": String,
 	"type": [String],
