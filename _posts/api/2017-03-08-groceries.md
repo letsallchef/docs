@@ -1,7 +1,7 @@
 ---
 title: Groceries
 cover: groceries.jpg
-endpoints: 
+endpoints: 8
 categories: api
 layout: api   
 ---

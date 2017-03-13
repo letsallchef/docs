@@ -1,7 +1,7 @@
 ---
 title: Restaurants
 cover: restaurants.jpg
-endpoints: 
+endpoints: 9
 categories: api
 layout: api    
 ---
