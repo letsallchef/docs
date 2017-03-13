@@ -27,10 +27,9 @@ Add, update and list restaurants.
 | star_rating | String | Star rating of the restaurant. |
 | opening_hours | [String] | Opening Hours. |
 | payment_methods | [String] | List of payment methods accepted. |
-| do_home_delivery | Boolean | Whether home delivered. |
+| can_home_deliver | Boolean | Whether home delivers food. |
 | price_range | [String] | Price range of items. |
 | photos | [file] | List of photos. |
-| can_home_deliver | Boolean | Whether home delivers food. |
 | address | {} | Address details. |
 | contact | {} | Contact details. |
 
@@ -49,10 +48,9 @@ Add, update and list restaurants.
 	"star_rating": String,
 	"opening_hours": [String],
 	"payment_methods": [String],
-	"do_home_delivery": Boolean,
+	"can_home_delever": Boolean,
 	"price_range": [String],
 	"photos": [String],
-	"can_home_delever": Boolean,
 	"address": {       
 	    "addressLine1": String,
 	    "addressLine2": String,
