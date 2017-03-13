@@ -74,6 +74,92 @@ Add, update and list restaurants.
 	    "user_username": String,
 	    "user_first_name": String,
 	    "user_rating": Number
+	}
+}
+{% endhighlight %}
+
+
+## Search Restaurants
+
+`GET /restaurants`
+
+**Response**
+
+{% highlight json %}
+[
+	{
+		"_id": ID,
+		"title": String,
+		"url": String,
+		"opening_hours": [String],
+		"can_home_delever": Boolean,
+		"address": {
+		    "addressLine1": String,
+		    "addressLine2": String,
+		    "landmark": String,
+		    "state": String,
+		    "city": String,
+		    "district": String,
+		    "country": String,
+		    "geo": {
+		        "latitude": Number,
+		        "longitude": Number
+		    }
+		},
+		"contact": {
+		    "email": String,
+		    "phone": String
+		}
+	}
+]
+{% endhighlight %}
+
+
+## Get Restaurant
+
+`GET /restaurants/:restaurant_id`
+
+**Response**
+
+{% highlight json %}
+{
+	"_id": ID,
+	"title": String,
+	"logo": String,
+	"url": String,
+	"type": [String],
+	"categories": [String],
+	"accepts_reservations": String,
+	"serves_cuisine": [String],
+	"star_rating": String,
+	"opening_hours": [String],
+	"payment_methods": [String],
+	"can_home_delever": Boolean,
+	"price_range": [String],
+	"photos": [String],
+	"address": {       
+	    "addressLine1": String,
+	    "addressLine2": String,
+	    "landmark": String,
+	    "state": String,
+	    "city": String,
+	    "district": String,
+	    "country": String,
+	    "geo": {
+	        "latitude": Number,
+	        "longitude": Number
+	    }
+	},
+	"contact": {
+	    "email": String,
+	    "phone": String
+	},
+	"owner": {
+	    "user_id": ID,
+	    "user_avatar": String,
+	    "user_username": String,
+	    "user_first_name": String,
+	    "user_rating": Number
 	},
 	"comments": {
 	    "user_id": ID,
@@ -87,9 +173,6 @@ Add, update and list restaurants.
 }
 {% endhighlight %}
 
-## Search Restaurants	
-
-## Get Restaurant
 
 ## Edit Restaurant
 
