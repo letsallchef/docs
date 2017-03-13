@@ -30,8 +30,8 @@ Know about the menus, reviews and rating of the restaurants nearby.
 | can_home_deliver | Boolean | Whether home delivers food. |
 | price_range | [String] | Price range of items. |
 | photos | [file] | List of photos. |
-| address | {} | Address details. |
-| contact | {} | Contact details. |
+| address | { } | Address details. |
+| contact | { } | Contact details. |
 
 **Response**
 
@@ -196,8 +196,8 @@ Know about the menus, reviews and rating of the restaurants nearby.
 | can_home_deliver | Boolean | Whether home delivers food. |
 | price_range | [String] | Price range of items. |
 | photos | [file] | List of photos. |
-| address | {} | Address details. |
-| contact | {} | Contact details. |
+| address | { } | Address details. |
+| contact | { } | Contact details. |
 
 **Response**
 
