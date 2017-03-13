@@ -5,7 +5,7 @@ endpoints: 9
 categories: api
 layout: api    
 ---
-Add, update and list restaurants.
+Know about the menus, reviews and rating of the restaurants nearby. 
 <!--more-->
 
 ## Add Restaurant

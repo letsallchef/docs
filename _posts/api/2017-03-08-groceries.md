@@ -5,6 +5,7 @@ endpoints: 8
 categories: api
 layout: api   
 ---
+Your favourite grocery stores came online !
 <!--more-->
 
 ## Add Grocery
