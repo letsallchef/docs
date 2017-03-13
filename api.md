@@ -12,9 +12,9 @@ permalink: /api-documentation
 			</div>
 			<div class="content">
 				<a href="{{ site.baseurl }}{{ api.url }}" class="header">{{ api.title }}</a>
-				<div class="meta">
+				<!-- <div class="meta">
 					<span class="date">Last Updated : {{ api.date | date_to_long_string }}</span>
-				</div>
+				</div> -->
 				<div class="description">
 					{{ api.excerpt }}
 				</div>
