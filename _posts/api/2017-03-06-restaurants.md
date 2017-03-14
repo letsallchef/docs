@@ -176,7 +176,7 @@ Know about the menus, reviews and rating of the restaurants nearby.
 
 ## Edit Restaurant
 
-`POST /restaurants`
+`POST /restaurants/:restaurant_id`
 
 **Parameters**
 
