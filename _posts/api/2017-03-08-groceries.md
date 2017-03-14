@@ -28,13 +28,13 @@ Your favourite grocery stores came online !
 
 {% highlight json %}
 {
-	"_id": ID
-	"title": String
-	"description": String
-	"also_known_as": String
-	"image": String
-	"metric_units": [String]
-	"type": [String]
+	"_id": ID,
+	"title": String,
+	"description": String,
+	"also_known_as": String,
+	"image": String,
+	"metric_units": [String],
+	"type": [String],
 	"categories": [String]
 }
 {% endhighlight %}
@@ -57,13 +57,13 @@ Your favourite grocery stores came online !
 {% highlight json %}
 [
 	{
-		"_id": ID
-		"title": String
-		"description": String
-		"also_known_as": String
-		"image": String
-		"metric_units": [String]
-		"type": [String]
+		"_id": ID,
+		"title": String,
+		"description": String,
+		"also_known_as": String,
+		"image": String,
+		"metric_units": [String],
+		"type": [String],
 		"categories": [String]
 	}
 ]
@@ -78,13 +78,13 @@ Your favourite grocery stores came online !
 
 {% highlight json %}
 {
-	"_id": ID
-	"title": String
-	"description": String
-	"also_known_as": String
-	"image": String
-	"metric_units": [String]
-	"type": [String]
+	"_id": ID,
+	"title": String,
+	"description": String,
+	"also_known_as": String,
+	"image": String,
+	"metric_units": [String],
+	"type": [String],
 	"categories": [String]
 }
 {% endhighlight %}
@@ -110,13 +110,13 @@ Your favourite grocery stores came online !
 
 {% highlight json %}
 {
-	"_id": ID
-	"title": String
-	"description": String
-	"also_known_as": String
-	"image": String
-	"metric_units": [String]
-	"type": [String]
+	"_id": ID,
+	"title": String,
+	"description": String,
+	"also_known_as": String,
+	"image": String,
+	"metric_units": [String],
+	"type": [String],
 	"categories": [String]
 }
 {% endhighlight %}
