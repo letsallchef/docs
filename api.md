@@ -9,7 +9,7 @@ permalink: /api-documentation
 		<div class="column">
 			<div class="ui card">
 				<div class="image">
-					<img src="{{ site.baseurl }}/uploads/posts/{{ api.cover }}">
+					<img src="{{ site.baseurl }}/uploads/posts/api/{{ api.cover }}">
 				</div>
 				<div class="content">
 					<a href="{{ site.baseurl }}{{ api.url }}" class="header">{{ api.title }}</a>
