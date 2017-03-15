@@ -137,6 +137,12 @@ Know about the menus, reviews and rating of the restaurants nearby.
 	"can_home_delever": Boolean,
 	"price_range": [String],
 	"photos": [String],
+	"badges": [{
+        "badge_id": ID,
+        "badge_name": String,
+        "badge_cover": String,
+        "recieved": DateTime
+    }],
 	"address": {       
 	    "addressLine1": String,
 	    "addressLine2": String,
