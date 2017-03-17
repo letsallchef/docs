@@ -19,9 +19,8 @@ Your favourite grocery stores came online !
 | title | String | Title of grocery. |
 | description | String | Brief description of grocery. |
 | also_known_as | String | Alternate name of grocery. |
-| image | file | Image of grocery. |
+| cover | file | Image of grocery. |
 | metric_units | [String] | Unit of grocery. |
-| type | [String] | Type of grocery. |
 | categories | [String] | Grocery categories. |
 
 **Response**
@@ -32,9 +31,8 @@ Your favourite grocery stores came online !
 	"title": String,
 	"description": String,
 	"also_known_as": String,
-	"image": String,
+	"cover": String,
 	"metric_units": [String],
-	"type": [String],
 	"categories": [String]
 }
 {% endhighlight %}
@@ -47,9 +45,8 @@ Your favourite grocery stores came online !
 **Parameters**
 
 | Name | Type | Description |
-| --- | --- | --- |
+| cover | --- | --- |
 | title | String | Title of grocery. |
-| type | [String] | Type of grocery. |
 | categories | [String] | Grocery categories. |
 
 **Response**
@@ -61,9 +58,8 @@ Your favourite grocery stores came online !
 		"title": String,
 		"description": String,
 		"also_known_as": String,
-		"image": String,
+		"cover": String,
 		"metric_units": [String],
-		"type": [String],
 		"categories": [String]
 	}
 ]
@@ -82,9 +78,8 @@ Your favourite grocery stores came online !
 	"title": String,
 	"description": String,
 	"also_known_as": String,
-	"image": String,
+	"cover": String,
 	"metric_units": [String],
-	"type": [String],
 	"categories": [String]
 }
 {% endhighlight %}
@@ -101,9 +96,8 @@ Your favourite grocery stores came online !
 | title | String | Title of grocery. |
 | description | String | Brief description of grocery. |
 | also_known_as | String | Alternate name of grocery. |
-| image | file | Image of grocery. |
+| cover | file | Image of grocery. |
 | metric_units | [String] | Unit of grocery. |
-| type | [String] | Type of grocery. |
 | categories | [String] | Grocery categories. |
 
 **Response**
@@ -114,9 +108,8 @@ Your favourite grocery stores came online !
 	"title": String,
 	"description": String,
 	"also_known_as": String,
-	"image": String,
+	"cover": String,
 	"metric_units": [String],
-	"type": [String],
 	"categories": [String]
 }
 {% endhighlight %}
