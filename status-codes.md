@@ -5,12 +5,11 @@ endpoints: 2
 categories:
 layout: api
 ---
+
 # HTTP Status Codes
 
 | Code | Status | Description |
 | --- | --- | --- |
-
-| Data | Data | Data |
 | 200 | OK | The request was processed and returned successfully. Nothing was changed. |
 | 201 | Created | The new resource was created successfully |
 | 202 | Accepted | The request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon, as it might be disallowed when processing actually takes place. |
