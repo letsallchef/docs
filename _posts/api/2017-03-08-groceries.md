@@ -35,7 +35,7 @@ Your favourite grocery stores came online !
 **Parameters**
 
 | Name | Type | Description |
-| cover | --- | --- |
+| --- | --- | --- |
 | title | String | Title of grocery. |
 | categories | [String] | Grocery categories. |
 
@@ -77,7 +77,7 @@ Your favourite grocery stores came online !
 
 ## Edit Grocery
 
-`PUT /groceries`
+`PUT /groceries/:grocery_id`
 
 **Request**
 
