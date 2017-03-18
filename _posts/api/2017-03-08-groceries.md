@@ -116,16 +116,15 @@ Your favourite grocery stores came online !
 
 ## Remove Grocery From Shopping List
 
-`DELETE /groceries/:grocery_id/unlist`
+`POST /groceries/:shopping_list_item_id/unlist`
 
 **Response**
 
 `Status 204`
 
-
 ## Report Grocery
 
-`POST /groceries/:grocery_id`
+`POST /groceries/:grocery_id/report`
 
 **Parameters**
 
