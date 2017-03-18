@@ -25,17 +25,7 @@ Your favourite grocery stores came online !
 
 **Response**
 
-{% highlight json %}
-{
-	"_id": ID,
-	"title": String,
-	"description": String,
-	"also_known_as": String,
-	"cover": String,
-	"metric_units": [String],
-	"categories": [String]
-}
-{% endhighlight %}
+`Status 201`
 
 
 ## Search Groceries
