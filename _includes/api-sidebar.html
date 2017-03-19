@@ -1,94 +1,110 @@
-<div class="ui vertical inverted sidebar menu left" id="api-sidebar">
-	<div class="item">
-		<a href="{{ site.baseurl }}/" class="header">Home</a>
+<div class="ui styled fluid accordion">
+	<div class="title">
+		<i class="dropdown icon"></i>
+		Users
 	</div>
-	<div class="item">
-		<a href="{{ site.baseurl }}/status-codes" class="header">HTTP Status Codes</a>
-	</div>
-	<div class="item">
-		<a href="{{ site.baseurl }}/http-methods" class="header">HTTP Methods</a>
-	</div>
-	<div class="item">
-		<a href="{{ site.baseurl }}/api/recipes" class="header">Recipes</a>
-		<div class="menu">
-			<a href="{{ site.baseurl }}/api/recipes#add-recipe" class="item">Add Recipe</a>
-			<a href="{{ site.baseurl }}/api/recipes#list-my-recipes" class="item">List My Recipes</a>
-			<a href="{{ site.baseurl }}/api/recipes#list-user-recipes" class="item">List User Recipes</a>
-			<a href="{{ site.baseurl }}/api/recipes#search-recipes" class="item">Search Recipes</a>
-			<a href="{{ site.baseurl }}/api/recipes#get-recipe" class="item">Get Recipe</a>
-			<a href="{{ site.baseurl }}/api/recipes#favorite-recipe" class="item">Favorite Recipe</a>
-			<a href="{{ site.baseurl }}/api/recipes#unfavorite-recipe" class="item">Unfavorite Recipe</a>
-			<a href="{{ site.baseurl }}/api/recipes#edit-recipe" class="item">Edit Recipe</a>
-			<a href="{{ site.baseurl }}/api/recipes#comment-recipe" class="item">Comment Recipe</a>
-			<a href="{{ site.baseurl }}/api/recipes#report-recipe-" class="item">Report Recipe </a>
-			<a href="{{ site.baseurl }}/api/recipes#delete-recipe" class="item">Delete Recipe</a>
+	<div class="content">
+		<div class="ui vertical fluid menu">
+			<a class="item" href="{{ site.baseurl }}/api/users#sign-in-user">Sign In User</a>
+			<a class="item" href="{{ site.baseurl }}/api/users#sign-out-user">Sign Out User</a>
+			<a class="item" href="{{ site.baseurl }}/api/users#add-user">Add User</a>
+			<a class="item" href="{{ site.baseurl }}/api/users#search-users">Search Users</a>
+			<a class="item" href="{{ site.baseurl }}/api/users#get-my-profile">Get My Profile</a>
+			<a class="item" href="{{ site.baseurl }}/api/users#get-user">Get User</a>
+			<a class="item" href="{{ site.baseurl }}/api/users#follow-a-user">Follow A User</a>
+			<a class="item" href="{{ site.baseurl }}/api/users#unfollow-a-user">Unfollow A User</a>
+			<a class="item" href="{{ site.baseurl }}/api/users#edit-user">Edit User</a>
+			<a class="item" href="{{ site.baseurl }}/api/users#report-user">Report User </a>
+			<a class="item" href="{{ site.baseurl }}/api/users#delete-user">Delete User</a>		
 		</div>
-	</div>
-	<div class="item">
-		<a href="{{ site.baseurl }}/api/groceries" class="header">Groceries</a>
-		<div class="menu">
-			<a href="{{ site.baseurl }}/api/groceries#add-grocery" class="item">Add Grocery</a>
-			<a href="{{ site.baseurl }}/api/groceries#search-groceries" class="item">Search Groceries</a>
-			<a href="{{ site.baseurl }}/api/groceries#get-grocery" class="item">Get Grocery</a>
-			<a href="{{ site.baseurl }}/api/groceries#edit-grocery" class="item">Edit Grocery</a>
-			<a href="{{ site.baseurl }}/api/groceries#add-grocery-to-shopping-list" class="item">Add Grocery To Shopping List</a>
-			<a href="{{ site.baseurl }}/api/groceries#remove-grocery-from-shopping-list" class="item">Remove Grocery From Shopping List</a>
 
-			<a href="{{ site.baseurl }}/api/groceries#report-grocery" class="item">Report Grocery</a>
-			<a href="{{ site.baseurl }}/api/groceries#delete-grocery" class="item">Delete Grocery</a>
+	</div>
+	<div class="title">
+		<i class="dropdown icon"></i>
+		Groceries
+	</div>
+	<div class="content">
+		<div class="ui vertical fluid menu">
+			<a class="item" href="{{ site.baseurl }}/api/groceries#add-grocery">Add Grocery</a>
+			<a class="item" href="{{ site.baseurl }}/api/groceries#search-groceries">Search Groceries</a>
+			<a class="item" href="{{ site.baseurl }}/api/groceries#get-grocery">Get Grocery</a>
+			<a class="item" href="{{ site.baseurl }}/api/groceries#edit-grocery">Edit Grocery</a>
+			<a class="item" href="{{ site.baseurl }}/api/groceries#add-grocery-to-shopping-list">Add Grocery To Shopping List</a>
+			<a class="item" href="{{ site.baseurl }}/api/groceries#remove-grocery-from-shopping-list">Remove Grocery From Shopping List</a>
+			<a class="item" href="{{ site.baseurl }}/api/groceries#report-grocery">Report Grocery</a>
+			<a class="item" href="{{ site.baseurl }}/api/groceries#delete-grocery">Delete Grocery</a>
 		</div>
 	</div>
-	<div class="item">
-		<a href="{{ site.baseurl }}/api/stores" class="header">Grocery Store</a>
-		<div class="menu">
-			<a href="{{ site.baseurl }}/api/stores#add-store" class="item">Add Store</a>
-			<a href="{{ site.baseurl }}/api/stores#search-stores" class="item">Search Stores</a>
-			<a href="{{ site.baseurl }}/api/stores#get-store" class="item">Get Store</a>
-			<a href="{{ site.baseurl }}/api/stores#edit-store" class="item">Edit Store</a>
-			<a href="{{ site.baseurl }}/api/stores#order-grocery" class="item">Order Grocery</a>
-			<a href="{{ site.baseurl }}/api/stores#comment-store" class="item">Comment Store</a>
-			<a href="{{ site.baseurl }}/api/stores#report-store" class="item">Report Store</a>
-			<a href="{{ site.baseurl }}/api/stores#delete-store" class="item">Delete Store</a>
+	<div class="title">
+		<i class="dropdown icon"></i>
+		Recipes
+	</div>
+	<div class="content">
+		<div class="ui vertical fluid menu">
+			<a class="item" href="{{ site.baseurl }}/api/recipes#add-recipe">Add Recipe</a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#list-my-recipes">List My Recipes</a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#list-user-recipes">List User Recipes</a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#search-recipes">Search Recipes</a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#get-recipe">Get Recipe</a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#favorite-recipe">Favorite Recipe</a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#unfavorite-recipe">Unfavorite Recipe</a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#edit-recipe">Edit Recipe</a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#comment-recipe">Comment Recipe</a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#report-recipe-">Report Recipe </a>
+			<a class="item" href="{{ site.baseurl }}/api/recipes#delete-recipe">Delete Recipe</a>
+
 		</div>
 	</div>
-	<div class="item">
-		<a href="{{ site.baseurl }}/api/restaurants" class="header">Restaurants</a>
-		<div class="menu">
-			<a href="{{ site.baseurl }}/api/restaurants#add-restaurant" class="item">Add Restaurant</a>
-			<a href="{{ site.baseurl }}/api/restaurants#search-restaurants" class="item">Search Restaurants</a>
-			<a href="{{ site.baseurl }}/api/restaurants#get-restaurant" class="item">Get Restaurant</a>
-			<a href="{{ site.baseurl }}/api/restaurants#edit-restaurant" class="item">Edit Restaurant</a>
-			<a href="{{ site.baseurl }}/api/restaurants#order-recipe" class="item">Order Recipe</a>
-			<a href="{{ site.baseurl }}/api/restaurants#comment-restaurant" class="item">Comment Restaurant</a>
-			<a href="{{ site.baseurl }}/api/restaurants#report-restaurant" class="item">Report Restaurant</a>
-			<a href="{{ site.baseurl }}/api/restaurants#delete-restaurant" class="item">Delete Restaurant</a>
+	<div class="title">
+		<i class="dropdown icon"></i>
+		Restaurants
+	</div>
+	<div class="content">
+		<div class="ui vertical fluid menu">
+			<a class="item" href="{{ site.baseurl }}/api/restaurants#add-restaurant">Add Restaurant</a>
+			<a class="item" href="{{ site.baseurl }}/api/restaurants#search-restaurants">Search Restaurants</a>
+			<a class="item" href="{{ site.baseurl }}/api/restaurants#get-restaurant">Get Restaurant</a>
+			<a class="item" href="{{ site.baseurl }}/api/restaurants#edit-restaurant">Edit Restaurant</a>
+			<a class="item" href="{{ site.baseurl }}/api/restaurants#order-recipe">Order Recipe</a>
+			<a class="item" href="{{ site.baseurl }}/api/restaurants#comment-restaurant">Comment Restaurant</a>
+			<a class="item" href="{{ site.baseurl }}/api/restaurants#report-restaurant">Report Restaurant</a>
+			<a class="item" href="{{ site.baseurl }}/api/restaurants#delete-restaurant">Delete Restaurant</a>
 		</div>
 	</div>
-	<div class="item">
-		<a href="{{ site.baseurl }}/api/users" class="header">Users</a>
-		<div class="menu">
-			<a href="{{ site.baseurl }}/api/users#sign-in-user" class="item">Sign In User</a>
-			<a href="{{ site.baseurl }}/api/users#sign-out-user" class="item">Sign Out User</a>
-			<a href="{{ site.baseurl }}/api/users#add-user" class="item">Add User</a>
-			<a href="{{ site.baseurl }}/api/users#search-users" class="item">Search Users</a>
-			<a href="{{ site.baseurl }}/api/users#get-my-profile" class="item">Get My Profile</a>
-			<a href="{{ site.baseurl }}/api/users#get-user" class="item">Get User</a>
-			<a href="{{ site.baseurl }}/api/users#follow-a-user" class="item">Follow A User</a>
-			<a href="{{ site.baseurl }}/api/users#unfollow-a-user" class="item">Unfollow A User</a>
-			<a href="{{ site.baseurl }}/api/users#edit-user" class="item">Edit User</a>
-			<a href="{{ site.baseurl }}/api/users#report-user" class="item">Report User </a>
-			<a href="{{ site.baseurl }}/api/users#delete-user" class="item">Delete User</a>
+	<div class="title">
+		<i class="dropdown icon"></i>
+		Stores
+	</div>
+	<div class="content">
+		<div class="ui vertical fluid menu">
+			<a class="item" href="{{ site.baseurl }}/api/stores#add-store">Add Store</a>
+			<a class="item" href="{{ site.baseurl }}/api/stores#search-stores">Search Stores</a>
+			<a class="item" href="{{ site.baseurl }}/api/stores#get-store">Get Store</a>
+			<a class="item" href="{{ site.baseurl }}/api/stores#edit-store">Edit Store</a>
+			<a class="item" href="{{ site.baseurl }}/api/stores#order-grocery">Order Grocery</a>
+			<a class="item" href="{{ site.baseurl }}/api/stores#comment-store">Comment Store</a>
+			<a class="item" href="{{ site.baseurl }}/api/stores#report-store">Report Store</a>
+			<a class="item" href="{{ site.baseurl }}/api/stores#delete-store">Delete Store</a>
 		</div>
 	</div>
-	<div class="item">
-		<a href="{{ site.baseurl }}/api/orders" class="header">Orders</a>
-		<div class="menu">
-			<a href="{{ site.baseurl }}/api/orders#list-my-orders" class="item">List My Orders</a>
-			<a href="{{ site.baseurl }}/api/orders#list-store-orders" class="item">List Store Orders</a>
-			<a href="{{ site.baseurl }}/api/orders#list-restaurant-orders" class="item">List Restaurant Orders</a>
-			<a href="{{ site.baseurl }}/api/orders#get-order" class="item">Get Order</a>
-			<a href="{{ site.baseurl }}/api/orders#edit-order" class="item">Edit Order</a>
-			<a href="{{ site.baseurl }}/api/orders#delete-order" class="item">Delete Order</a>
+	<div class="title">
+		<i class="dropdown icon"></i>
+		Orders
+	</div>
+	<div class="content">
+		<div class="ui vertical fluid menu">
+			<a class="item" href="{{ site.baseurl }}/api/orders#list-my-orders">List My Orders</a>
+			<a class="item" href="{{ site.baseurl }}/api/orders#list-store-orders">List Store Orders</a>
+			<a class="item" href="{{ site.baseurl }}/api/orders#list-restaurant-orders">List Restaurant Orders</a>
+			<a class="item" href="{{ site.baseurl }}/api/orders#get-order">Get Order</a>
+			<a class="item" href="{{ site.baseurl }}/api/orders#edit-order">Edit Order</a>
+			<a class="item" href="{{ site.baseurl }}/api/orders#delete-order">Delete Order</a>
 		</div>
+	</div>
+	<div class="title">
+		<i class="dropdown icon"></i>
+		Badges
+	</div>
+	<div class="content">
 	</div>
 </div>
