@@ -1,13 +1,19 @@
 ---
 layout: default
 ---
+<div class="ui stackable reverse grid container">
+	<div class="four wide column">
+		<img src="{{site.baseurl}}/uploads/posts/api/{{ page.cover }}" alt="" class="ui fluid rounded image api-cover">
+		{% include api-sidebar.html %}
+	</div>
+	<div class="twelve wide column">
+	<div class="ui grey segment">
+			<h1 class="header">{{ page.title }} - API Documentation</h1>
 
-{% include api-sidebar.html %}
+		</div>
+		{{ content }}
+	</div>
+</div>
 
 {% include footer.html %}
 {% include scripts.html %}
-<script>
-	$('#sidebar-button').on('click', function() {
-		$('#api-sidebar').sidebar('toggle');
-	})
-</script>
