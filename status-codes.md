@@ -1,8 +1,5 @@
 ---
 title: "HTTP Status Codes"
-cover: http.jpg
-endpoints: 2
-categories:
 layout: api
 ---
 
