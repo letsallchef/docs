@@ -107,7 +107,7 @@ Your favourite grocery stores came online !
 
 ## Add Grocery To Shopping List
 
-`POST /groceries/:grocery_id/list`
+`PUT /groceries/:grocery_id/list`
 
 **Response**
 
@@ -116,7 +116,7 @@ Your favourite grocery stores came online !
 
 ## Remove Grocery From Shopping List
 
-`POST /groceries/:shopping_list_item_id/unlist`
+`DELETE /shopping-list/:shopping_list_item_id/unlist`
 
 **Response**
 
