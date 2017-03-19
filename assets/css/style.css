@@ -1,0 +1,15 @@
+.ui.label .variable{
+	color: #222;
+}
+
+article.api{
+	margin-bottom: 20px;
+}
+
+pre{
+	margin: 0px;
+	border-radius: 4px;
+}
+.api-cover{
+	margin-bottom: 20px;
+}
