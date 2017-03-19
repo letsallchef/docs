@@ -1,16 +1,17 @@
 ---
 layout: default
 ---
-<div class="ui stackable reverse grid container">
+<div class="ui stackable grid container" id="api">
 	<div class="four wide column">
+		{% if page.cover %}
 		<img src="{{site.baseurl}}/uploads/posts/api/{{ page.cover }}" alt="" class="ui fluid rounded image api-cover">
+		{% endif %}
 		{% include api-sidebar.html %}
 	</div>
 	<div class="twelve wide column">
-	<div class="ui grey segment">
+		<header class="ui grey segment">
 			<h1 class="header">{{ page.title }} - API Documentation</h1>
-
-		</div>
+		</header>
 		{{ content }}
 	</div>
 </div>
