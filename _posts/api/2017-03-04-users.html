@@ -94,18 +94,18 @@ layout: api
     </div>
 </article>
 
-
-<article id="add-user">
+<!-- Add User -->
+<article id="add-user" class="api">
     <div class="ui attached message">
         <div class="header">
-            <h2 class="ui header">Add User</h2>
+            <h2 class="ui header">Add user</h2>
         </div>
         <p>Create a user with the given data.</p>
         <div class="ui large green label">
             POST
         </div>
         <div class="ui large label">
-            endpoint/<span class="variable">:variable</span>/
+            /users
         </div>
     </div>
     <div class="ui attached fluid segment">
@@ -135,283 +135,440 @@ layout: api
                 Response
             </div>
             <div class="content">
-                <p>Response</p>
+                <pre><code class="http">Status: 201</code></pre>
             </div>
         </div>
     </div>
 </article>
-**Response**
 
-{% highlight json %}
-{
-    "id": ID,
-    "first_name": String,
-    "last_name": String,
-    "avatar": String,
-    "username": String,
-    "password": String,
-    "gender": String,
-    "date_of_birth": Date,
+
+<!-- Search Users -->
+<article id="search-users" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Search users</h2>
+        </div>
+        <p>Search for users matching given query parameters.</p>
+        <div class="ui large blue label">
+            GET
+        </div>
+        <div class="ui large label">
+            /users
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p>Long description</p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td>query</td>
+                            <td>String</td>
+                            <td>Part of <b>username</b> or <b>first_name</b> of the user.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+    {
+        "id": "58cb721293afc42be47bf6ca",
+        "first_name": "John",
+        "last_name": "Doe",
+        "username": "johndoe",
+        "avatar": "58cb721293afc42be47bf6ca-user-avatar.jpg"
+    }
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- Get Authenticated User -->
+<article id="get-authenticated-user" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Get authenticated user</h2>
+        </div>
+        <p></p>
+        <div class="ui large blue label">
+            GET
+        </div>
+        <div class="ui large label">
+            /me
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">{
+    "id": "58cb721293afc42be47bf6ca",
+    "first_name": "John",
+    "last_name": "Doe",
+    "username": "johndoe",
+    "avatar": "58cb721293afc42be47bf6ca-user-avatar.jpg",
+    "gender": "String",
+    "date_of_birth": "2014-02-10T10:50:42.389Z",
+    "badges": [
+        {
+            "badge_id": "34cb721293afc42be47bf6df",
+            "badge_title": "Captain Chef",
+            "badge_cover": "67cb721293afc42be47bf6ef-badge-cover.jpg",
+            "recieved": "2014-02-10T10:50:42.389Z"
+        }
+    ],
     "contact": {
-    "email": String,
-    "phone": String
-},
-"address": {
-"addressLine1": String,
-"addressLine2": String,
-"landmark": String,
-"state": String,
-"city": String,
-"district": String,
-"country": String,
-"geo": {
-"latitude": Number,
-"longitude": Number
-}
-},
-"preferences": [{
-"property_key": String,
-"propert_value": String
-}]
-}
-{% endhighlight %}
+        "email": "johndoe@gmail.com",
+        "phone": "9713173946"
+    },
+    "address": [
+        {
+            "id": "98cb721293afc42be47bf6df",
+            "alias": "Home",
+            "addressLine1": "Harry Street",
+            "addressLine2": "Anugraha (H)",
+            "landmark": "ISRO",
+            "state": "Karnataka",
+            "city": "Hebbal",
+            "district": "Bangalore",
+            "country": "India",
+            "geo": {
+                "latitude": "40.044",
+                "longitude": "20.678"
+            }
+        }
+    ],
+    "following": [
+        {
+            "user_id": "34j9jsidjr75650sksdjsdjs",
+            "user_avatar": "ljhg8d8dhjdnbsdfksjasd3f-user-avatar.jpg",
+            "user_username": "jayshankar",
+            "user_first_name": "Jay",
+            "user_rating": 4
+        }
+    ],
+    "followers": [
+        {
+            "user_id": "34j9jsidjr75650sksdjsdjs",
+            "user_avatar": "ljhg8d8dhjdnbsdfksjasd3f-user-avatar.jpg",
+            "user_username": "chris",
+            "user_first_name": "Christy",
+            "user_rating": 4
+        }
+    ],
+    "favourites": [
+        {
+            "recipe_id": "34j9jsidjr75650sksdjsdjs",
+            "recipe_title": "Kerala Putt",
+            "recipe_cover": "34j9jsidjr75650sksdjsdjs-recipe-cover",
+            "recipe_rating": 4
+        }
+    ],
+    "shopping_list": [
+        {
+            "id": "34j9jsidjr75650sksdjsdjs",
+            "item_id": "34j9jsidjr75650123dfsdjs",
+            "item_title": "Red Onion",
+            "item_quantity": 1,
+            "item_unit": "kilogram"
+        }
+    ],
+    "preferences": [
+        {
+            "property_key": "is_vegetarian",
+            "propert_value": "true"
+        }
+    ]
+}</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
 
-## Search Users
-
-`GET /users`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| query | String | Part of `username` or `first_name` of the user. |
-
-**Response**
-
-{% highlight json %}
-{
-    "id": ID,
-    "first_name": String,
-    "last_name": String,
-    "username": String,
-    "rating": Number
-}
-{% endhighlight %}
-
-
-## Get My Profile
-
-`GET /users/:user_id`
-
-**Response**
-
-{% highlight json %}
-{
-    "id": ID,
-    "first_name": String,
-    "last_name": String,
-    "username": String,
-    "avatar": String,
-    "password": String,
-    "gender": String,
-    "date_of_birth": Date,
+<!-- Get a single user -->
+<article id="get-a-single-user" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Get a single user</h2>
+        </div>
+        <p>Brief Description</p>
+        <div class="ui large blue label">
+            GET
+        </div>
+        <div class="ui large label">
+            /user/<span class="variable">:user_id</span>/
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p>Long description</p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td>Key</td>
+                            <td>Type</td>
+                            <td>Description</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[{
+    "id": "58cb721293afc42be47bf6ca",
+    "first_name": "John",
+    "last_name": "Doe",
+    "username": "johndoe",
+    "avatar": "58cb721293afc42be47bf6ca-user-avatar.jpg",
+    "gender": "String",
+    "badges": [
+        {
+            "badge_id": "34cb721293afc42be47bf6df",
+            "badge_title": "Captain Chef",
+            "badge_cover": "67cb721293afc42be47bf6ef-badge-cover.jpg",
+            "recieved": "2014-02-10T10:50:42.389Z"
+        }
+    ],
     "contact": {
-    "email": String,
-    "phone": String
-},
-"badges": [{
-"badge_id": ID,
-"badge_name": String,
-"badge_cover": String,
-"recieved": DateTime
-}],
-"address": {
-"addressLine1": String,
-"addressLine2": String,
-"landmark": String,
-"state": String,
-"city": String,
-"district": String,
-"country": String,
-"geo":{
-"latitude": Number,
-"longitude": Number
-}
-},
-"following": [{
-"user_id": ID,
-"user_username": String,
-"user_first_name": String,
-"user_rating": Number
-}],
-"followers": [{
-"user_id": ID,
-"user_username": String,
-"user_first_name": String,
-"user_rating": Number
-}],
-"favourites": [{
-"recipe_id": ID,
-"recipe_title": String,
-"recipe_cover": String,
-"recipe_rating": String
-}],
-"shopping_list": [{
-"item_id": ID,
-"item_title": String,
-"item_quantity": Number,
-"item_unit": String
-}],
-"preferences": [{
-"property_key": String,
-"propert_value": String
-}],
-"is_verified": Boolean,
-"is_paid_verified": Boolean
-}
-{% endhighlight %}
+        "email": "johndoe@gmail.com",
+        "phone": "9713173946"
+    }
+}]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
 
-
-## Get User
-
-`GET /users/:user_id`
-
-**Response**
-
-{% highlight json %}
-{
-    "id": ID,
-    "first_name": String,
-    "last_name": String,
-    "username": String,
-    "avatar": String,
-    "password": String,
-    "gender": String,
-    "date_of_birth": Date,
-    "badges": [{
-    "badge_id": ID,
-    "badge_name": String,
-    "badge_cover": String,
-    "recieved": DateTime
-}],
-"contact": {
-"email": String,
-"phone": String
-}
-"address": {
-"addressLine1": String,
-"addressLine2": String,
-"landmark": String,
-"state": String,
-"city": String,
-"district": String,
-"country": String,
-"geo":{
-"latitude": Number,
-"longitude": Number
-}
-},
-"following": [{
-"user_id": ID,
-"user_username": String,
-"user_first_name": String,
-"user_rating": Number
-}],
-"followers": [{
-"user_id": ID,
-"user_username": String,
-"user_first_name": String,
-"user_rating": Number
-}],
-"favourites": [{
-"recipe_id": ID,
-"recipe_title": String,
-"recipe_cover": String,
-"recipe_rating": String
-}],
-"shopping_list": [{
-"item_id": ID,
-"item_title": String,
-"item_quantity": Number,
-"item_unit": String
-}],
-"preferences": [{
-"property_key": String,
-"propert_value": String
-}],
-"is_verified": Boolean,
-"is_paid_verified": Boolean
-}
-{% endhighlight %}
+<article id="" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Get authenticated user's shopping list</h2>
+        </div>
+        <p>Get shopping list details of current logged in user.</p>
+        <div class="ui large blue label">
+            GET
+        </div>
+        <div class="ui large label">
+            /me/shopping-list
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p>Long description</p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+    {
+        "_id": "ajah1j1k4lohdnytiyrn57c3",
+        "item_id": "ajah1j1k4lohdnytiyrn57c3",
+        "item_title": "Milk",
+        "item_quantity": 2,
+        "item_unit": "litre"
+    }
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
 
-## Get My Shopping List
-
-`GET /me/shopping-list`
-
-**Response**
-
-{% highlight json %}
-[{  
-"_id": ID,
-"item_id": ID,
-"item_title": String,
-"item_quantity": Number,
-"item_unit": String
-}]
-{% endhighlight %}
-
-
-## Follow A User
-
-`PUT /users/:user_id/follow`
-
-**Response**
-
-`Status 204`
-
-
-## Unfollow A User
-
-`DELETE /users/:user_id/unfollow`
-
-**Response**
-
-`Status 204`
+<article id="" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Follow user</h2>
+        </div>
+        <p>Follows a user.</p>
+        <div class="ui large brown label">
+            PUT
+        </div>
+        <div class="ui large label">
+            /users/<span class="variable">:user_id</span>/follow
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p>Long description</p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">Status: 204</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
 
-## Get Followers list
+<article id="" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Unfollow user</h2>
+        </div>
+        <p>Removes a users from the follow list.</p>
+        <div class="ui large red label">
+            DELETE
+        </div>
+        <div class="ui large label">
+            /users/<span class="variable">:user_id</span>/unfollow
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p>Long description</p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td>access_token</td>
+                            <td>String</td>
+                            <td>A valid and authencated users access token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">Status: 204</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
-`GET /users/:user_id/followers`
 
-**Response**
+<article id="" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Get followers list</h2>
+        </div>
+        <p>Gets the list of followers of specified user.</p>
+        <div class="ui large blue label">
+            GET
+        </div>
+        <div class="ui large label">
+            /users/<span class="variable">:user_id</span>/followers
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p>Long description</p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td>Key</td>
+                            <td>Type</td>
+                            <td>Description</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+    {
+        "user_id": "",
+        "user_username": "albinpeter",
+        "user_first_name": "Albin",
+        "user_rating": 4
+    }
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
-{% highlight json %}
-[{
-"user_id": ID,
-"user_username": String,
-"user_first_name": String,
-"user_rating": Number
-}]
-{% endhighlight %}
+<article id="" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Get following list</h2>
+        </div>
+        <p>Gets the list of following of specified user.</p>
+        <div class="ui large blue label">
+            GET
+        </div>
+        <div class="ui large label">
+            /users/<span class="variable">:user_id</span>/following
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p>Long description</p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td>Key</td>
+                            <td>Type</td>
+                            <td>Description</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+    {
+        "user_id": "",
+        "user_username": "albinpeter",
+        "user_first_name": "Albin",
+        "user_rating": 4
+    }
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
-
-## Get Following List
-
-`GET /users/:user_id/following`
-
-**Response**
-
-{% highlight json %}
-[{
-"user_id": ID,
-"user_username": String,
-"user_first_name": String,
-"user_rating": Number
-}]
-{% endhighlight %}
 
 
 ## Edit User
