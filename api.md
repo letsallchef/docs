@@ -1,7 +1,7 @@
 ---
-title: "API Documentation"
+title: "API Modules"
 layout: default
-permalink: /api-documentation
+permalink: /api-modules
 ---
 <br>
 <div class="ui container">
