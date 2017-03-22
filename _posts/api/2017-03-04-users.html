@@ -96,6 +96,7 @@ layout: api
     </div>
 </article>
 
+
 <!-- Add User -->
 <article id="add-user" class="api">
     <div class="ui attached message">
@@ -573,58 +574,52 @@ layout: api
 
 
 
-## Edit User
-
-`PUT /users/:user_id`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| first_name | String | First name of the user. |
-| last_name | String | Last name of the user. |
-| avatar | file | Profile avatar of the user. |
-| password | String | Login Password of the user. |
-| gender | String | Gender of the user. |
-| date_of_birth | Date | Date of birth of the user. |
-| contact | { } | Contact details.|
-| address | { } | Address details. |
-| preferences | [{ }] | Preferences. |
-
-**Response**
-
-{% highlight json %}
-{
-    "id": ID,
-    "first_name": String,
-    "last_name": String,
-    "avatar": String,
-    "password": String,
-    "gender": String,
-    "date_of_birth": Date,
-    "contact": {
-    "email": String,
-    "phone": String
-},
-"address": {
-"addressLine1": String,
-"addressLine2": String,
-"landmark": String,
-"state": String,
-"city": String,
-"district": String,
-"country": String,
-"geo": {
-"latitude": Number,
-"longitude": Number
-}
-},
-"preferences": [{
-"property_key": String,
-"propert_value": String
-}]
-}
-{% endhighlight %}
+<!-- Edit User -->
+<article id="edit-user" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Edit user</h2>
+        </div>
+        <p>Edits user with the given data.</p>
+        <div class="ui large purple label">
+            PATCH
+        </div>
+        <div class="ui large label">
+            /users
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p>Long description</p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr><td>first_name</td><td>String</td><td>First name of the user.</td></tr>
+                        <tr><td>last_name</td><td>String</td><td>Last name of the user.</td></tr>
+                        <tr><td>avatar</td><td>image</td><td>Profile avatar of the user.</td></tr>
+                        <tr><td>password</td><td>String</td><td>Login Password of the user.</td></tr>
+                        <tr><td>gender</td><td>String</td><td>Gender of the user.</td></tr>
+                        <tr><td>date_of_birth</td><td>Date</td><td>Date of birth of the user.</td></tr>
+                        <tr><td>contact</td><td>{ }</td><td>Contact details.</td></tr>
+                        <tr><td>address</td><td>{ }</td><td>Address details.</td></tr>
+                        <tr><td>preferences</td><td>[{ }]</td><td>Preferences.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="http">Status: 201</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
 
 ## Report User
