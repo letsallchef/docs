@@ -1,0 +1,79 @@
+{
+    "id": "58cb721293afc42be47bf6ca",
+    "first_name": "John",
+    "last_name": "Doe",
+    "username": "johndoe",
+    "avatar": "58cb721293afc42be47bf6ca-user-avatar.jpg",
+    "gender": "String",
+    "date_of_birth": "2014-02-10T10:50:42.389Z",
+    "badges": [
+        {
+            "badge_id": "34cb721293afc42be47bf6df",
+            "badge_title": "Captain Chef",
+            "badge_cover": "67cb721293afc42be47bf6ef-badge-cover.jpg",
+            "recieved": "2014-02-10T10:50:42.389Z"
+        }
+    ],
+    "contact": {
+        "email": "johndoe@gmail.com",
+        "phone": "9713173946"
+    },
+    "address": [
+        {
+            "id": "98cb721293afc42be47bf6df",
+            "alias": "Home",
+            "addressLine1": "Harry Street",
+            "addressLine2": "Anugraha (H)",
+            "landmark": "ISRO",
+            "state": "Karnataka",
+            "city": "Hebbal",
+            "district": "Bangalore",
+            "country": "India",
+            "geo": {
+                "latitude": "40.044",
+                "longitude": "20.678"
+            }
+        }
+    ],
+    "following": [
+        {
+            "user_id": "34j9jsidjr75650sksdjsdjs",
+            "user_avatar": "ljhg8d8dhjdnbsdfksjasd3f-user-avatar.jpg",
+            "user_username": "jayshankar",
+            "user_first_name": "Jay",
+            "user_rating": 4
+        }
+    ],
+    "followers": [
+        {
+            "user_id": "34j9jsidjr75650sksdjsdjs",
+            "user_avatar": "ljhg8d8dhjdnbsdfksjasd3f-user-avatar.jpg",
+            "user_username": "chris",
+            "user_first_name": "Christy",
+            "user_rating": 4
+        }
+    ],
+    "favourites": [
+        {
+            "recipe_id": "34j9jsidjr75650sksdjsdjs",
+            "recipe_title": "Kerala Putt",
+            "recipe_cover": "34j9jsidjr75650sksdjsdjs-recipe-cover",
+            "recipe_rating": 4
+        }
+    ],
+    "shopping_list": [
+        {
+            "id": "34j9jsidjr75650sksdjsdjs",
+            "item_id": "34j9jsidjr75650123dfsdjs",
+            "item_title": "Red Onion",
+            "item_quantity": 1,
+            "item_unit": "kilogram"
+        }
+    ],
+    "preferences": [
+        {
+            "property_key": "is_vegetarian",
+            "propert_value": "true"
+        }
+    ]
+}
