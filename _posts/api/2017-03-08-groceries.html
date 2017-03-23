@@ -7,140 +7,458 @@ categories: api
 layout: api   
 ---
 
-## Add Grocery
-
-`POST /groceries`
-
-**Paramerts**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title | String | Title of grocery. |
-| description | String | Brief description of grocery. |
-| also_known_as | String | Alternate name of grocery. |
-| cover | file | Image of grocery. |
-| metric_units | [String] | Unit of grocery. |
-| categories | [String] | Grocery categories. |
-
-**Response**
-
-`Status 201`
-
-
-## Search Groceries
-
-`GET /groceries`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title | String | Title of grocery. |
-| categories | [String] | Grocery categories. |
-
-**Response**
-
-{% highlight json %}
-[
-	{
-		"_id": ID,
-		"title": String,
-		"description": String,
-		"also_known_as": String,
-		"cover": String,
-		"metric_units": [String],
-		"categories": [String]
-	}
-]
-{% endhighlight %}
-
-
-## Get Grocery
-
-`GET /groceries/:grocery_id`
-
-**Response**
-
-{% highlight json %}
-{
-	"_id": ID,
-	"title": String,
-	"description": String,
-	"also_known_as": String,
-	"cover": String,
-	"metric_units": [String],
-	"categories": [String]
-}
-{% endhighlight %}
-
-
-## Edit Grocery
-
-`PUT /groceries/:grocery_id`
-
-**Request**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title | String | Title of grocery. |
-| description | String | Brief description of grocery. |
-| also_known_as | String | Alternate name of grocery. |
-| cover | file | Image of grocery. |
-| metric_units | [String] | Unit of grocery. |
-| categories | [String] | Grocery categories. |
-
-**Response**
-
-{% highlight json %}
-{
-	"_id": ID,
-	"title": String,
-	"description": String,
-	"also_known_as": String,
-	"cover": String,
-	"metric_units": [String],
-	"categories": [String]
-}
-{% endhighlight %}
+<!-- Add Grocery -->
+<article id="add-grocery" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Add grocery</h2>
+		</div>
+		<p>Adds grocery to the system.</p>
+		<div class="ui large green label">
+			POST
+		</div>
+		<div class="ui large label">
+			/groceries
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+							<td><i class="icon checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr>
+							<td>title</td>
+							<td> String</td>
+							<td> Title of grocery.</td>
+						</tr>
+						<tr>
+							<td>description</td>
+							<td> String</td>
+							<td> Brief description of grocery.</td>
+						</tr>
+						<tr>
+							<td>also_known_as</td>
+							<td> String</td>
+							<td> Alternate name of grocery.</td>
+						</tr>
+						<tr>
+							<td>cover</td>
+							<td> file</td>
+							<td> Image of grocery.</td>
+						</tr>
+						<tr>
+							<td>metric_units</td>
+							<td> [String]</td>
+							<td> Unit of grocery.</td>
+						</tr>
+						<tr>
+							<td>categories</td>
+							<td> [String]</td>
+							<td> Grocery categories.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
 
-## Add Grocery To Shopping List
+<!-- Search Groceries -->
+<article id="search-groceries" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Search groceries</h2>
+		</div>
+		<p>Search for groceries.</p>
+		<div class="ui large blue label">
+			GET
+		</div>
+		<div class="ui large label">
+			/groceries
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>title</td>
+                    		<td>String</td>
+                    		<td>Title of the grocery.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>categories</td>
+                    		<td>String</td>
+                    		<td>Catogory name to be searched.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">[
+    {
+        "_id": "afohre57njhsdgg6736123sd",
+        "title": "Potato",
+        "description": "Light brown color veg.",
+        "also_known_as": "",
+        "cover": "afohre57njhsdgg6736123sd-grocery-cover.jpg",
+        "metric_units": [
+            "kilogram",
+            "gram"
+        ],
+        "categories": [
+            "vegetables"
+        ]
+    }
+]</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-`PUT /groceries/:grocery_id/list`
 
-**Response**
+<!-- Get Grocery -->
+<article id="get-grocery" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Get grocery</h2>
+		</div>
+		<p>Get the details of a grocery.</p>
+		<div class="ui large blue label">
+			GET
+		</div>
+		<div class="ui large label">
+			groceries/<span class="variable">:grocery_id</span>/
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">{
+    "_id": "afohre57njhsdgg6736123sd",
+    "title": "Potato",
+    "description": "Light brown color veg.",
+    "also_known_as": "",
+    "cover": "afohre57njhsdgg6736123sd-grocery-cover.jpg",
+    "metric_units": [
+        "kilogram",
+        "gram"
+    ],
+    "categories": [
+        "vegetables"
+    ]
+}</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-`Status 201`
+
+<!-- Edit Grocery -->
+<article id="edit-grocery" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Edit grocery</h2>
+		</div>
+		<p>Update the grocery with new data.</p>
+		<div class="ui large brown label">
+			PUT
+		</div>
+		<div class="ui large label">
+			/groceries
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+							<td><i class="icon checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr>
+							<td>title</td>
+							<td> String</td>
+							<td> Title of grocery.</td>
+						</tr>
+						<tr>
+							<td>description</td>
+							<td> String</td>
+							<td> Brief description of grocery.</td>
+						</tr>
+						<tr>
+							<td>also_known_as</td>
+							<td> String</td>
+							<td> Alternate name of grocery.</td>
+						</tr>
+						<tr>
+							<td>cover</td>
+							<td> file</td>
+							<td> Image of grocery.</td>
+						</tr>
+						<tr>
+							<td>metric_units</td>
+							<td> [String]</td>
+							<td> Unit of grocery.</td>
+						</tr>
+						<tr>
+							<td>categories</td>
+							<td> [String]</td>
+							<td> Grocery categories.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
 
-## Remove Grocery From Shopping List
+<!-- Add Grocery To Shopping List -->
+<article id="add-grocery-to-shopping-list" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Add grocery to shopping list</h2>
+		</div>
+		<p>Brief Description</p>
+		<div class="ui large brown label">
+			PUT
+		</div>
+		<div class="ui large label">
+			groceries/<span class="variable">:grocery_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-`DELETE /shopping-list/:shopping_list_item_id/unlist`
 
-**Response**
+<!-- Remove Grocery From Shopping List -->
+<article id="remove-grocery-from-shopping-list" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Remove grocery from shopping list</h2>
+		</div>
+		<p>Brief Description</p>
+		<div class="ui large red label">
+			DELETE
+		</div>
+		<div class="ui large label">
+			/groceries/<span class="variable">:grocery_id</span>/
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 204</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-`Status 204`
-
-## Report Grocery
-
-`POST /groceries/:grocery_id/report`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| reason_type  | String | Type of the report reason. |
-| reason_body  | String | Body of the report reason. |
-
-**Response**
-
-`Status 201`
 
 
-## Delete Grocery
+<article id="report-grocery" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Report grocery</h2>
+        </div>
+        <p>Reports a grocery item.</p>
+        <div class="ui large green label">
+            POST
+        </div>
+        <div class="ui large label">
+            /groceries/<span class="variable">:grocery_id</span>
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                   <tr>
+                    <td><i class="icon checkmark"></i>access_token</td>
+                    <td>String</td>
+                    <td>A valid access token.</td>
+                </tr>
+                <tr>
+                    <td>reason_type</td>
+                    <td>String</td>
+                    <td>Type of the report reason.</td>
+                </tr>
+                <tr>
+                    <td>reason_type</td>
+                    <td>String</td>
+                    <td>Body of the report reason.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="title">
+            <i class="dropdown icon"></i>
+            Response
+        </div>
+        <div class="content">
+            <pre><code class="json">Status: 200</code></pre>
+        </div>
+    </div>
+</div>
+</article>
 
-`DELETE /groceries/:grocery_id`
 
-**Response**
-
-`Status 204`
+<article id="delete-grocery" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Delete grocery</h2>
+		</div>
+		<p>Brief Description</p>
+		<div class="ui large red label">
+			DELETE
+		</div>
+		<div class="ui large label">
+			/groceries/<span class="variable">:grocery_id</span>/
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 204</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
