@@ -7,7 +7,6 @@ categories: api
 layout: api
 ---
 
-<!--more-->
 <article id="sign-in" class="api">
     <div class="ui attached message">
         <div class="header">
@@ -56,6 +55,7 @@ layout: api
 </article>
 
 
+<!-- Sign Out -->
 <article id="sign-out" class="api">
     <div class="ui attached message">
         <div class="header">
@@ -121,7 +121,6 @@ layout: api
             <div class="content">
                 <table class="ui celled striped table">
                     <tbody>
-                        <tr><td><i class="icon checkmark"></i>first_name</td><td>String</td><td>First name of the user.</td></tr>
                         <tr><td><i class="icon checkmark"></i>username</td><td>String</td><td>Username of the user.</td></tr>
                         <tr><td><i class="icon checkmark"></i>email</td><td>String</td><td>Email ID of the user.</td></tr>
                         <tr><td><i class="icon checkmark"></i>password</td><td>String</td><td>Login Password of the user.</td></tr>
@@ -188,7 +187,8 @@ layout: api
         "first_name": "John",
         "last_name": "Doe",
         "username": "johndoe",
-        "avatar": "58cb721293afc42be47bf6ca-user-avatar.jpg"
+        "avatar": "58cb721293afc42be47bf6ca-user-avatar.jpg",
+        "rating": 4
     }
 ]</code></pre>
             </div>
@@ -197,11 +197,11 @@ layout: api
 </article>
 
 
-<!-- Get Authenticated User -->
-<article id="get-authenticated-user" class="api">
+<!-- Get My Profile -->
+<article id="get-my-profile" class="api">
     <div class="ui attached message">
         <div class="header">
-            <h2 class="ui header">Get authenticated user</h2>
+            <h2 class="ui header">Get my profile</h2>
         </div>
         <p></p>
         <div class="ui large blue label">
@@ -248,10 +248,8 @@ layout: api
             "recieved": "2014-02-10T10:50:42.389Z"
         }
     ],
-    "contact": {
-        "email": "johndoe@gmail.com",
-        "phone": "9713173946"
-    },
+    "email": "johndoe@gmail.com",
+    "phone": "9713173946",
     "address": [
         {
             "id": "98cb721293afc42be47bf6df",
@@ -269,24 +267,8 @@ layout: api
             }
         }
     ],
-    "following": [
-        {
-            "user_id": "34j9jsidjr75650sksdjsdjs",
-            "user_avatar": "ljhg8d8dhjdnbsdfksjasd3f-user-avatar.jpg",
-            "user_username": "jayshankar",
-            "user_first_name": "Jay",
-            "user_rating": 4
-        }
-    ],
-    "followers": [
-        {
-            "user_id": "34j9jsidjr75650sksdjsdjs",
-            "user_avatar": "ljhg8d8dhjdnbsdfksjasd3f-user-avatar.jpg",
-            "user_username": "chris",
-            "user_first_name": "Christy",
-            "user_rating": 4
-        }
-    ],
+    "following": 54,
+    "followers": 32,
     "favourites": [
         {
             "recipe_id": "34j9jsidjr75650sksdjsdjs",
@@ -369,10 +351,8 @@ layout: api
             "recieved": "2014-02-10T10:50:42.389Z"
         }
     ],
-    "contact": {
-        "email": "johndoe@gmail.com",
-        "phone": "9713173946"
-    }
+    "email": "johndoe@gmail.com",
+    "phone": "9713173946"
 }</code></pre>
             </div>
         </div>
@@ -380,10 +360,10 @@ layout: api
 </article>
 
 
-<article id="get-authenticated-users-shopping-list" class="api">
+<article id="get-my-shopping-list" class="api">
     <div class="ui attached message">
         <div class="header">
-            <h2 class="ui header">Get authenticated user's shopping list</h2>
+            <h2 class="ui header">Get my shopping list</h2>
         </div>
         <p>Get shopping list details of current logged in user.</p>
         <div class="ui large blue label">
@@ -513,10 +493,10 @@ layout: api
 </article>
 
 
-<article id="get-followers-list" class="api">
+<article id="get-my-followers" class="api">
     <div class="ui attached message">
         <div class="header">
-            <h2 class="ui header">Get followers list</h2>
+            <h2 class="ui header">Get my followers</h2>
         </div>
         <p>Gets the list of followers of specified user.</p>
         <div class="ui large blue label">
@@ -562,10 +542,109 @@ layout: api
     </div>
 </article>
 
-<article id="get-following-list" class="api">
+<article id="get-my-following" class="api">
     <div class="ui attached message">
         <div class="header">
-            <h2 class="ui header">Get following list</h2>
+            <h2 class="ui header">Get my following</h2>
+        </div>
+        <p>Gets the list of following of specified user.</p>
+        <div class="ui large blue label">
+            GET
+        </div>
+        <div class="ui large label">
+            /users/<span class="variable">:user_id</span>/following
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+    {
+        "user_id": "",
+        "user_username": "albinpeter",
+        "user_first_name": "Albin",
+        "user_rating": 4
+    }
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<article id="get-user-followers" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Get user followers</h2>
+        </div>
+        <p>Gets the list of followers of specified user.</p>
+        <div class="ui large blue label">
+            GET
+        </div>
+        <div class="ui large label">
+            /users/<span class="variable">:user_id</span>/followers
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+    {
+        "user_id": "",
+        "user_username": "albinpeter",
+        "user_first_name": "Albin",
+        "user_rating": 4
+    }
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
+
+<article id="get-user-following" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Get user following</h2>
         </div>
         <p>Gets the list of following of specified user.</p>
         <div class="ui large blue label">
