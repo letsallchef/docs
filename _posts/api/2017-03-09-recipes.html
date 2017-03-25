@@ -129,328 +129,676 @@ layout: api
 </article>
 
 
-## List My Recipes
-
-`GET /me/recipes`
-
-**Response**
-
-{% highlight json %}
-[{
-    "title": String,
-    "description": String,
-    "cover": String,
-    "prep_time": Number,
-    "rating": Number,
-    "author": {
-        "user_id": ID,
-        "user_avatar": String,
-        "user_username": String,
-        "user_first_name" : String,
-        "user_rating": Number
-	}
-}]
-{% endhighlight %}
-
-
-## List User Recipes
-
-`GET /:user_id/recipes`
-
-**Response**
-
-{% highlight json %}
-[{
-    "title": String,
-    "description": String,
-    "cover": String,
-    "prep_time": Number,
-    "rating": Number,
-    "author": {
-        "user_id": ID,
-        "user_avatar": String,
-        "user_username": String,
-        "user_first_name" : String,
-        "user_rating": Number
-	}
-}]
-{% endhighlight %}
-
-
-## Search Recipes
-
-`GET /recipes`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title  | String | Title of the recipe. |
-| yield_number | Number | Quantity of recipe yield. |
-| yield_unit | String | Unit of recipe yield. |
-| prep_time | Number | Time taken to prepare the recipe in minutes. |
-| cuisine | String | Cuisine of the recipe. |
-| course | String | Course of the recipe. |
-| category | String | Category of the recipe. |
-| sub_category | String | Sub category of the recipe. |
-| tags | [String] | Tags for the recipe. |
-| ease | Number | Easiness of the recipe in the order of 1-5. |
-| utensils | [String] | Utensils used for preparation of the recipe. |
-| ingredients | [{ }] |  |
-| nutrition | { } |  |
-| combinations | [{ }] |  |
-| variants_of_recipe | [{ }] |  |
-
-**Response**
-
-{% highlight json %}
-[{
-    "title": String,
-    "description": String,
-    "cover": String,
-    "prep_time": Number,
-    "rating": Number,
-    "author": {
-        "user_id": ID,
-        "user_avatar": String,
-        "user_username": String,
-        "user_first_name" : String,
-        "user_rating": Number
-	}
-}]
-{% endhighlight %}
+<article id="list-my-recipes" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">List my recipes</h2>
+		</div>
+		<p>Lits the recipes added by the authenticated user.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/me/recipes
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">[
+    {	"_id": "ghgs3hjn6hglo8uhfhb6",
+        "title": "Paneer Sandwich",
+        "description": "Simple and easy breakfast or snack",
+        "cover": "12376ajsdgjahgj126871623-recipe-cover.jpg",
+        "prep_time": 15,
+        "rating": 4.5,
+        "course": "Breakfast"
+    }
+]</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
 
-## Get Recipe
-
-`GET /recipes/:recipe_id`
-
-**Response**
-
-{% highlight json %}
-{
-	"_id": ID,
-	"title": String,
-	"url": String,
-	"description": String,
-	"cover": String,
-	"images": [String],
-	"yield_number": Number,
-	"yeild_unit": String,
-	"prep_time": Number,
-	"cuisine": String,
-	"course": String,
-	"category": String,
-	"sub_category": String,
-	"tags": [String],
-	"ease": Number,
-	"utensils": [String],
-	"rating": Number,
-	"ingredients": [{
-	    "grocery_id": ID,
-	    "grocery_title": String,
-	    "grocery_image": String,
-	    "metric_quantity": Number,
-	    "grocery_metric_unit": String
-	}],
-	"instructions": [{
-	    "method": String,
-	    "time_taken": Number,
-	    "instruction": String
-	}],
-	"nutrition": {
-	    "fat": Number,
-	    "calorie": Number,
-	    "protein": Number,
-	    "sugar": Number
-	},
-	"author": {
-	    "user_id": ID,
-	    "user_avatar": String,
-	    "user_username": String,
-	    "user_first_name": String,
-	    "user_rating": Number
-	},
-	"combinations": [{
-	    "recipe_id": ID,
-	    "recipe_title": String,
-	    "recipe_cover": String,
-	    "recipe_rating": String
-	}],
-	"varients_of_recipe": [{,
-	    "recipe_id": ID,
-	    "recipe_title": String,
-	    "recipe_cover": String,
-	    "recipe_rating": String
-	}],
-	"comments": [{,
-	    "user_id": ID,
-	    "user_avatar": String,
-	    "user_username": String,
-	    "user_first_name": String,
-	    "user_rating": Number,
-	    "comment": String,
-	    "rating": Number
-	}]
-}
-{% endhighlight %}
+<article id="list-user-recipes" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">List user recipes</h2>
+		</div>
+		<p>Lits the recipes added by the authenticated user.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+		/users/<span class="variable">:user_id</span>/recipes
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">[
+    {	"_id": "ghgs3hjn6hglo8uhfhb6",
+        "title": "Paneer Sandwich",
+        "description": "Simple and easy breakfast or snack",
+        "cover": "12376ajsdgjahgj126871623-recipe-cover.jpg",
+        "prep_time": 15,
+        "rating": 4.5,
+        "course": "Breakfast"
+    }
+]</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
 
-## Favorite Recipe
-
-`PUT /recipes/:recipe_id/favorite` 
-
-**Response**
-
-`Status 204`
-
-
-## Unfavorite Recipe
-
-`DELETE /recipes/:recipe_id/unfavorite` 
-
-**Response**
-
-`Status 204`
-
-
-## Edit Recipe
-
-`PUT /recipes/:recipe_id`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title  | String | Title of the recipe. |
-| url | String | Human friendly URL for the recipe. |
-| description | String | Description of the recipe. |
-| cover | image | Cover image for the recipe. |
-| images | [image] | Images of recipe |
-| yield_number | Number | Quantity of recipe yield. |
-| yield_unit | String | Unit of recipe yield. |
-| prep_time | Number | Time taken to prepare the recipe in minutes. |
-| cuisine | String | Cuisine of the recipe. |
-| course | String | Course of the recipe. |
-| category | String | Category of the recipe. |
-| sub_category | String | Sub category of the recipe. |
-| tags | [String] | Tags for the recipe. |
-| ease | Number | Easiness of the recipe in the order of 1-5. |
-| utensils | [String] | Utensils used for preparation of the recipe. |
-| ingredients | [{ }] |  |
-| instructions | [{ }] |  |
-| nutrition | { } |  |
-| combinations | [{ }] |  |
-| variants_of_recipe | [{ }] |  |
-| is_private | Boolean | Whether the recipe is private. |
-
-**Response**
-
-{% highlight json %}
-{
-	"_id": ID,
-	"title": String,
-	"url": String,
-	"description": String,
-	"cover": String,
-	"images": [String],
-	"yield_number": Number,
-	"yield_unit": String,
-	"prep_time": Number,
-	"cuisine": String,
-	"course": String,
-	"category": String,
-	"sub_category": String,
-	"tags": [String],
-	"ease": Number,
-	"utensils": [String],
-	"rating": Number,
-	"ingredients": [{
-	    "grocery_id": ID,
-	    "grocery_title": String,
-	    "grocery_image": String,
-	    "metric_quantity": Number,
-	    "grocery_metric_unit": String
-	}],
-	"instructions": [{
-	    "method": String,
-	    "time_taken": Number,
-	    "instruction": String
-	}],
-	"nutrition": {
-	    "fat": Number,
-	    "calorie": Number,
-	    "protein": Number,
-	    "sugar": Number
-	},
-	"author": {
-	    "user_id": ID,
-	    "user_avatar": String,
-	    "user_username": String,
-	    "user_first_name": String,
-	    "user_rating": Number
-	},
-	"combinations": [{
-	    "recipe_id": ID,
-	    "recipe_title": String,
-	    "recipe_cover": String,
-	    "recipe_rating": String
-	}],
-	"variants_of_recipe": [{,
-	    "recipe_id": ID,
-	    "recipe_title": String,
-	    "recipe_cover": String,
-	    "recipe_rating": String
-	}],
-	"comments": [{,
-	    "user_id": ID,
-	    "user_avatar": String,
-	    "user_username": String,
-	    "user_first_name": String,
-	    "user_rating": Number,
-	    "comment": String,
-	    "rating": Number
-	}]
-}
-{% endhighlight %}
+<article id="search-recipes" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Search recipes</h2>
+		</div>
+		<p>Brief Description</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/recipes
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>query</td>
+                    		<td>Sring</td>
+                    		<td>Name of the recipe to be searched for.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>ingredients</td>
+                    		<td>[grocery_id]</td>
+                    		<td>Ingredients that should be used in the recipe.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>prep_time</td>
+                    		<td>Number</td>
+                    		<td>Time used to prepare the recipe.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>rating</td>
+                    		<td>Number</td>
+                    		<td>Rating of the recipe.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>cuisine</td>
+                    		<td>String</td>
+                    		<td>Cousine of the recipe.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>course</td>
+                    		<td>String</td>
+                    		<td>Course that recipe belongs to.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>tags</td>
+                    		<td>String</td>
+                    		<td>Tags of the recipe.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">[
+    {
+        "title": "Paneer Sandwich",
+        "description": "Simple and easy breakfast or snack",
+        "cover": "12376ajsdgjahgj126871623-recipe-cover.jpg",
+        "prep_time": 15,
+        "rating": 4.5,
+        "course": "Breakfast",
+        "author": {
+            "_id": "6tyh9fghagg56gshdggas787",
+            "first_name": "Sruthy",
+            "last_name": "Ramanujan"
+            "username": "thakkudu",
+            "rating": 4.5
+        }
+    }
+]</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
 
-## Comment Recipe
+<article id="" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Get recipe</h2>
+		</div>
+		<p>Get the details of the specified recipe</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/recipes/<span class="variable">:recipe_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">{
+    "_id": "jahdnfhyrendh67nhdtwshjt",
+    "title": "Chocolate Milk Shake",
+    "url": "chocolate-milk-shake",
+    "description": "String",
+    "cover": "jahdnfhyrendh67nhdtwshjt-recipe-cover.jpg",
+    "images": [
+        "jahdnfhyrendh67nhdtwshjt-recipe-image-1.jpg",
+        "jahdnfhyrendh67nhdtwshjt-recipe-image-2.jpg"
+    ],
+    "yield_number": 2,
+    "yield_unit": "Glass",
+    "prep_time": 10,
+    "cuisine": "World",
+    "course": "Drinks",
+    "category": "",
+    "sub_category": "",
+    "tags": [
+        "veg",
+        "shake"
+    ],
+    "ease": 7,
+    "utensils": [
+        "yth65gbhnmki8ugfdsw45tfh"
+    ],
+    "rating": 4,
+    "ingredients": [
+        {
+            "grocery": "qweiuy6yhdjna78uhdt5364g",
+            "metric_quantity": 1,
+            "grocery_metric_unit": "cup"
+        },
+        {
+            "grocery": "qaseiuy6yhdasdasd78uhdt5",
+            "metric_quantity": 100,
+            "grocery_metric_unit": "gram"
+        }
+    ],
+    "instructions": [
+        {
+            "method": "mix",
+            "time_taken": 5,
+            "instruction": "Mix the chocolate and dates in juicer."
+        },
+        {
+            "method": "freeze",
+            "time_taken": 20,
+            "instruction": "Freeze the above mix for 20 mins."
+        }
+    ],
+    "nutrition": {
+        "fat": 12,
+        "calorie": 24,
+        "protein": 12,
+        "sugar": 14
+    },
+    "author": "hanaha6a7aya8a8a7ashsdhs",
+    "combinations": [
+        "jfhfgnhdgdgasdjahdgajhdg",
+        "jfhfg8as8d787hdgajhdga98"
+    ],
+    "variants_of_recipe": [
+        "456d6d6d6d7as8d7asd87yas",
+        "67asd67asd7a5sd76asd6tad"
+    ],
+    "comments": [
+        "8d8d8hdfguhdiufgyd87fdyg",
+        "sd65f4s6d5fsd6f4s6fsdf45"
+    ]
+}</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-`PUT /recipes/:recipe_id`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| comment  | String | Body of the comment. |
-| rating | Number | Rating of the recipe in the order of 1-5 |
-
-**Response**
-
-`Status: 201`
 
 
-## Report Recipe
+<article id="favorite-a-recipe" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Favorite a recipe</h2>
+		</div>
+		<p>Adds the specified recipe to the favorites list.</p>
+		<div class="ui large blue label">
+			PUT
+		</div>
+		<div class="ui large label">
+			recipes/<span class="variable">:recipe_id</span>/favorite
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 204</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-`POST /recipes/:recipe_id`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| reason_type  | String | Type of the report reason. |
-| reason_body  | String | Body of the report reason. |
-
-**Response**
-
-`Status: 201`
 
 
-## Delete Recipe
+<article id="unfavorite-a-recipe" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Unfavorite a recipe</h2>
+		</div>
+		<p>Removes the specified recipe from the favorites list.</p>
+		<div class="ui large red label">
+			DELETE
+		</div>
+		<div class="ui large label">
+			recipes/<span class="variable">:recipe_id</span>/unfavorite
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 200</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-`DELETE /recipes/:recipe_id`
 
-**Response**
 
-`Status: 204`
+<article id="edit-recipe" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Edit recipe</h2>
+		</div>
+		<p>Updates a recipe with the given details.</p>
+		<div class="ui large blue label">
+			PUT
+		</div>
+		<div class="ui large label">
+			/recipe/<span class="variable">:recipe_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled table">
+					<tbody>
+						<tr>
+							<td><i class="icon green checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr>
+							<td>title</td><td>String</td><td>Title of the recipe.</td>
+						</tr>
+						<tr>
+							<td>url</td><td>String</td><td>Human friendly URL for the recipe.</td>
+						</tr>
+						<tr>
+							<td>description</td><td>String</td><td>Description of the recipe.</td>
+						</tr>
+						<tr>
+							<td>cover</td><td>Image</td><td>Cover image for the recipe.</td>
+						</tr>
+						<tr>
+							<td>images</td><td>[Image]</td><td>Images of recipe</td>
+						</tr>
+						<tr>
+							<td>yield_number</td><td>Number</td><td>Quantity of recipe yield.</td>
+						</tr>
+						<tr>
+							<td>yield_unit</td><td>String</td><td>Unit of recipe yield.</td>
+						</tr>
+						<tr>
+							<td>prep_time</td><td>Number</td><td>Time taken to prepare the recipe in minutes.</td>
+						</tr>
+						<tr>
+							<td>cuisine</td><td>String</td><td>Cuisine of the recipe.</td>
+						</tr>
+						<tr>
+							<td>course</td><td>String</td><td>Course of the recipe.</td>
+						</tr>
+						<tr>
+							<td>category</td><td>String</td><td>Category of the recipe.</td>
+						</tr>
+						<tr>
+							<td>sub_category</td><td>String</td><td>Sub category of the recipe.</td>
+						</tr>
+						<tr>
+							<td>tags</td><td>[String]</td><td>Tags for the recipe.</td>
+						</tr>
+						<tr>
+							<td>ease</td><td>Number</td><td>Easiness of the recipe in the order of 1-5.</td>
+						</tr>
+						<tr>
+							<td>utensils</td><td>[utensils_id]</td><td>Utensils used for preparation of the recipe.</td>
+						</tr>
+						<tr>
+							<td>ingredients</td><td><pre><code class="json">[
+    {
+        "grocery": "grocery_id",
+        "metric_quantity": "Number",
+        "grocery_metric_unit": "String"
+    }
+]</code></pre></td><td></td>	
+						<tr>
+							<td>instructions</td><td><pre><code class="json">[
+    {
+        "method": "String",
+        "time_taken": "Number",
+        "instruction": "String"
+    }
+]</code></pre></td><td></td>
+						</tr>
+						<tr>
+							<td>nutrition</td><td><pre><code class="json">{
+    "fat": "Number",
+    "calorie": "Number",
+    "protein": "Number",
+    "sugar": "Number"
+}</code></pre></td><td></td>
+						</tr>
+						<tr>
+							<td>combinations</td><td>[recipe_id]</td><td>List of combo recipes.</td>
+						</tr>
+						<tr>
+							<td>variants_of_recipe</td><td>[recipe_id]</td><td>Varients of the recipe.</td>
+						</tr>
+						<tr>
+							<td>is_private</td><td>Boolean</td><td>Whether the recipe is private.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 202</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="comment-recipe" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Comment recipe</h2>
+		</div>
+		<p>Post a comment to the specified recipe.</p>
+		<div class="ui large blue label">
+			PUT
+		</div>
+		<div class="ui large label">
+			/recipes/<span class="variable">:recipe_id</span>/comments
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>title</td>
+                    		<td>String</td>
+                    		<td>Title of the comment.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>body</td>
+                    		<td>String</td>
+                    		<td>Body of the comment</td>
+                    	</tr>
+                    	<tr>
+                    		<td>rating</td>
+                    		<td>Number</td>
+                    		<td>Feedback rating.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="report-recipe" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Report recipe</h2>
+		</div>
+		<p>Report a recipe.</p>
+		<div class="ui large blue label">
+			PUT
+		</div>
+		<div class="ui large label">
+			/recipes/<span class="variable">:recipe_id</span>/report
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>reason_title</td>
+                    		<td>String</td>
+                    		<td>Title of the report.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>reason_body</td>
+                    		<td>String</td>
+                    		<td>Body of the report.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 202</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="delete-recipe" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Delete recipe</h2>
+		</div>
+		<p>Removes the specified recipe.</p>
+		<div class="ui large red label">
+			DELETE
+		</div>
+		<div class="ui large label">
+			/recipes/<span class="variable">:recipe_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 200</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
