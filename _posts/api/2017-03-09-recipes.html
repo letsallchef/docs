@@ -7,105 +7,126 @@ categories: api
 layout: api
 ---
 
-## Add Recipe
-
-`POST /recipes`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title  | String | Title of the recipe. |
-| url | String | Human friendly URL for the recipe. |
-| description | String | Description of the recipe. |
-| cover | image | Cover image for the recipe. |
-| images | [image] | Images of recipe |
-| yield_number | Number | Quantity of recipe yield. |
-| yield_unit | String | Unit of recipe yield. |
-| prep_time | Number | Time taken to prepare the recipe in minutes. |
-| cuisine | String | Cuisine of the recipe. |
-| course | String | Course of the recipe. |
-| category | String | Category of the recipe. |
-| sub_category | String | Sub category of the recipe. |
-| tags | [String] | Tags for the recipe. |
-| ease | Number | Easiness of the recipe in the order of 1-5. |
-| utensils | [String] | Utensils used for preparation of the recipe. |
-| ingredients | [{ }] |  |
-| instructions | [{ }] |  |
-| nutrition | { } |  |
-| combinations | [{ }] |  |
-| variants_of_recipe | [{ }] |  |
-| is_private | Boolean | Whether the recipe is private. |
-
-**Response**
-
-{% highlight json %}
-{
-	"_id": ID,
-	"title": String,
-	"url": String,
-	"description": String,
-	"cover": String,
-	"images": [String],
-	"yield_number": Number,
-	"yield_unit": String,
-	"prep_time": Number,
-	"cuisine": String,
-	"course": String,
-	"category": String,
-	"sub_category": String,
-	"tags": [String],
-	"ease": Number,
-	"utensils": [String],
-	"rating": Number,
-	"ingredients": [{
-	    "grocery_id": ID,
-	    "grocery_title": String,
-	    "grocery_image": String,
-	    "metric_quantity": Number,
-	    "grocery_metric_unit": String
-	}],
-	"instructions": [{
-	    "method": String,
-	    "time_taken": Number,
-	    "instruction": String
-	}],
-	"nutrition": {
-	    "fat": Number,
-	    "calorie": Number,
-	    "protein": Number,
-	    "sugar": Number
-	},
-	"author": {
-	    "user_id": ID,
-	    "user_avatar": String,
-	    "user_username": String,
-	    "user_first_name": String,
-	    "user_rating": Number
-	},
-	"combinations": [{
-	    "recipe_id": ID,
-	    "recipe_title": String,
-	    "recipe_cover": String,
-	    "recipe_rating": String
-	}],
-	"variants_of_recipe": [{,
-	    "recipe_id": ID,
-	    "recipe_title": String,
-	    "recipe_cover": String,
-	    "recipe_rating": String
-	}],
-	"comments": [{,
-	    "user_id": ID,
-	    "user_avatar": String,
-	    "user_username": String,
-	    "user_first_name": String,
-	    "user_rating": Number,
-	    "comment": String,
-	    "rating": Number
-	}]
-}
-{% endhighlight %}
+<article id="add-recipe" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Add recipe</h2>
+		</div>
+		<p>Adds a recipe with the given details.</p>
+		<div class="ui large orange label">
+			POST
+		</div>
+		<div class="ui large label">
+			/recipe
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled table">
+					<tbody>
+						<tr>
+							<td><i class="icon green checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr>
+							<td>title</td><td>String</td><td>Title of the recipe.</td>
+						</tr>
+						<tr>
+							<td>url</td><td>String</td><td>Human friendly URL for the recipe.</td>
+						</tr>
+						<tr>
+							<td>description</td><td>String</td><td>Description of the recipe.</td>
+						</tr>
+						<tr>
+							<td>cover</td><td>Image</td><td>Cover image for the recipe.</td>
+						</tr>
+						<tr>
+							<td>images</td><td>[Image]</td><td>Images of recipe</td>
+						</tr>
+						<tr>
+							<td>yield_number</td><td>Number</td><td>Quantity of recipe yield.</td>
+						</tr>
+						<tr>
+							<td>yield_unit</td><td>String</td><td>Unit of recipe yield.</td>
+						</tr>
+						<tr>
+							<td>prep_time</td><td>Number</td><td>Time taken to prepare the recipe in minutes.</td>
+						</tr>
+						<tr>
+							<td>cuisine</td><td>String</td><td>Cuisine of the recipe.</td>
+						</tr>
+						<tr>
+							<td>course</td><td>String</td><td>Course of the recipe.</td>
+						</tr>
+						<tr>
+							<td>category</td><td>String</td><td>Category of the recipe.</td>
+						</tr>
+						<tr>
+							<td>sub_category</td><td>String</td><td>Sub category of the recipe.</td>
+						</tr>
+						<tr>
+							<td>tags</td><td>[String]</td><td>Tags for the recipe.</td>
+						</tr>
+						<tr>
+							<td>ease</td><td>Number</td><td>Easiness of the recipe in the order of 1-5.</td>
+						</tr>
+						<tr>
+							<td>utensils</td><td>[utensils_id]</td><td>Utensils used for preparation of the recipe.</td>
+						</tr>
+						<tr>
+							<td>ingredients</td><td><pre><code class="json">[
+    {
+        "grocery": "grocery_id",
+        "metric_quantity": "Number",
+        "grocery_metric_unit": "String"
+    }
+]</code></pre></td><td></td>	
+						<tr>
+							<td>instructions</td><td><pre><code class="json">[
+    {
+        "method": "String",
+        "time_taken": "Number",
+        "instruction": "String"
+    }
+]</code></pre></td><td></td>
+						</tr>
+						<tr>
+							<td>nutrition</td><td><pre><code class="json">{
+    "fat": "Number",
+    "calorie": "Number",
+    "protein": "Number",
+    "sugar": "Number"
+}</code></pre></td><td></td>
+						</tr>
+						<tr>
+							<td>combinations</td><td>[recipe_id]</td><td>List of combo recipes.</td>
+						</tr>
+						<tr>
+							<td>variants_of_recipe</td><td>[recipe_id]</td><td>Varients of the recipe.</td>
+						</tr>
+						<tr>
+							<td>is_private</td><td>Boolean</td><td>Whether the recipe is private.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
 
 ## List My Recipes
