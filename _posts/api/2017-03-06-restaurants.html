@@ -7,111 +7,145 @@ categories: api
 layout: api    
 ---
 
-## Add Restaurant
 
-`POST /restaurants`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title | String | Name of the restaurant. |
-| logo | String | Logo of the restaurant |
-| cover | file | Cover image of the restaurant. |
-| url | String | User friendly URL of the restaurant. |
-| type | [String] | Type of the restaurant. |
-| categories | [String] | Categories of the restaurant. |
-| accepts_reservations | String | Whether the restaurant accepts reservations. |
-| serves_cuisine | [String] | List of cuisines served. |
-| star_rating | String | Star rating of the restaurant. |
-| opening_hours | [String] | Opening Hours. |
-| payment_methods | [String] | List of payment methods accepted. |
-| can_home_deliver | Boolean | Whether home delivers food. |
-| price_range | [String] | Price range of items. |
-| photos | [file] | List of photos. |
-| address | { } | Address details. |
-| contact | { } | Contact details. |
-
-**Response**
-
-{% highlight json %}
-{
-	"_id": ID,
-	"title": String,
-	"logo": String,
-	"url": String,
-	"type": [String],
-	"categories": [String],
-	"accepts_reservations": String,
-	"serves_cuisine": [String],
-	"star_rating": String,
-	"opening_hours": [String],
-	"payment_methods": [String],
-	"can_home_delever": Boolean,
-	"price_range": [String],
-	"photos": [String],
-	"address": {       
-	    "addressLine1": String,
-	    "addressLine2": String,
-	    "landmark": String,
-	    "state": String,
-	    "city": String,
-	    "district": String,
-	    "country": String,
-	    "geo": {
-	        "latitude": Number,
-	        "longitude": Number
-	    }
-	},
-	"contact": {
-	    "email": String,
-	    "phone": String
-	},
-	"owner": {
-	    "user_id": ID,
-	    "user_avatar": String,
-	    "user_username": String,
-	    "user_first_name": String,
-	    "user_rating": Number
-	}
-}
-{% endhighlight %}
+<article id="" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Add restaurant</h2>
+		</div>
+		<p>Reggisters a restaurant.</p>
+		<div class="ui large orange label">
+			POST
+		</div>
+		<div class="ui large label">
+			/restaurants
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+							<td><i class="icon checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr><td>title</td><td>String</td><td></td></tr>
+						<tr><td>logo</td><td>String</td><td></td></tr>
+						<tr><td>cover</td><td>String</td><td></td></tr>
+						<tr><td>url</td><td>String</td><td></td></tr>
+						<tr><td>categories</td><td>[String]</td><td></td></tr>
+						<tr><td>accepts_reservations</td><td>Boolean</td><td></td></tr>
+						<tr><td>serves_cuisine</td><td>[String]</td><td></td></tr>
+						<tr><td>star_rating</td><td>Number</td><td></td></tr>
+						<tr><td>opening_hours</td><td><pre><code class="json">[
+    {
+        "open": "Time",
+        "close": "Time"
+    }
+]</code></pre></td><td></td></tr>
+						<tr><td>payment_methods</td><td>[String]</td><td></td></tr>
+						<tr><td>can_home_delever</td><td>Boolean</td><td></td></tr>
+						<tr><td>photos</td><td>[Image]</td><td></td></tr>
+						<tr><td>email</td><td>String</td><td></td></tr>
+						<tr><td>phone</td><td>String</td><td></td></tr>
+						<tr><td>website</td><td>String</td><td></td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
 
-## Search Restaurants
-
-`GET /restaurants`
-
-**Response**
-
-{% highlight json %}
-[
+<article id="" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Search restaurants</h2>
+		</div>
+		<p>Search for restaurants with given parameters.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/restaurants
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">[
 	{
-		"_id": ID,
-		"title": String,
-		"url": String,
-		"opening_hours": [String],
-		"can_home_delever": Boolean,
+		"_id": "8as8das8da8sda9ds8a9sdah",
+		"title": "Kababish",
+		"url": "kababish-bangalore",
+		"cover": "8as8das8da8sda9ds8a9sdah-restaurant-cover.jpg",
+		"url": "kababish-bangalore",
+		"opening_hours": [
+			{
+				"open": "Time",
+				"close": "Time"
+			}
+		],
+		"can_home_delever": true,
 		"address": {
-		    "addressLine1": String,
-		    "addressLine2": String,
-		    "landmark": String,
-		    "state": String,
-		    "city": String,
-		    "district": String,
-		    "country": String,
-		    "geo": {
-		        "latitude": Number,
-		        "longitude": Number
-		    }
+			"addressLine1": "1st Cross, Bn Road",
+			"addressLine2": "2nd Stage",
+			"landmark": "SBI Bank",
+			"state": "Karnataka",
+			"city": "Bangalore",
+			"district": "Bangalore",
+			"country": "India",
+			"geo": {
+				"latitude": 21.00,
+				"longitude": 34.088
+			}
 		},
-		"contact": {
-		    "email": String,
-		    "phone": String
-		}
+		"email": "kabas=bish-bangalore@gmail.com",
+		"phone": "9797474795",
+		"website": "http://kababish.com",
+		"rating": 4.5
 	}
-]
-{% endhighlight %}
+]</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
 
 
 ## Get Restaurant
