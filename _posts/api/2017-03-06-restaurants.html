@@ -146,16 +146,43 @@ layout: api
 </article>
 
 
-
-
-## Get Restaurant
-
-`GET /restaurants/:restaurant_id`
-
-**Response**
-
-{% highlight json %}
-{
+<article id="" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Get Restaurant</h2>
+		</div>
+		<p>Get detials of the specified restaurant.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:restaurant_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">{
 	"_id": ID,
 	"title": String,
 	"logo": String,
@@ -209,8 +236,11 @@ layout: api
 	    "comment": String,
 	    "rating": Number
 	}
-}
-{% endhighlight %}
+}</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
 
 ## Edit Restaurant
