@@ -444,7 +444,7 @@ layout: api
 			PUT
 		</div>
 		<div class="ui large label">
-			recipes/<span class="variable">:recipe_id</span>/favorite
+			/recipes/<span class="variable">:recipe_id</span>/favorites
 		</div>
 	</div>
 	<div class="ui attached fluid segment">
@@ -488,7 +488,51 @@ layout: api
 			DELETE
 		</div>
 		<div class="ui large label">
-			recipes/<span class="variable">:recipe_id</span>/unfavorite
+			/recipes/<span class="variable">:recipe_id</span>/favorites
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 200</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+
+<article id="get-my-recipe" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Get my favorites</h2>
+		</div>
+		<p>Get the list of favotited recipes.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/me/favorites
 		</div>
 	</div>
 	<div class="ui attached fluid segment">
@@ -702,6 +746,68 @@ layout: api
 </article>
 
 
+
+<article id="get-recipe-comments" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Get Recipe Comments</h2>
+		</div>
+		<p>Get the list of comments of the specified recipe.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/recipes/<span class="variable">:recipe_id</span>/comments
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">{
+  "_id": "58dd5665493e061ee4236a28",
+  "cover": "58dd5665493e061ee4236a28-recipe-cover.jpg",
+  "title": "Lemon Tea",
+  "description": "The following recipes for black, herbal or iced lemon teas can bring refreshment when hot or warm you when you're not feeling best. Adding lemon to tea is a comforting way to enjoy tea, whether it's black tea or herbal.",
+  "comments": [
+    {
+      "_id": "58e5e5818fee4035937a242a",
+      "user": {
+        "_id": "58e5e3158fee4035937a2429",
+        "username": "shajanjp",
+        "first_name": "Shajan"
+      },
+      "title": "Can I add ginger instead of garlic ?",
+      "body": "I really dont like the taste of garlic, so is it ok to add ginger instead of that ?",
+      "rating": "4"
+    }
+  ]
+}</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
 <article id="report-recipe" class="api">
 	<div class="ui attached message">
 		<div class="header">
@@ -755,10 +861,10 @@ layout: api
 </article>
 
 
-<article id="delete-recipe" class="api">
+<article id="remove-recipe" class="api">
 	<div class="ui attached message">
 		<div class="header">
-			<h2 class="ui header">Delete recipe</h2>
+			<h2 class="ui header">Remove recipe</h2>
 		</div>
 		<p>Removes the specified recipe.</p>
 		<div class="ui large red label">
