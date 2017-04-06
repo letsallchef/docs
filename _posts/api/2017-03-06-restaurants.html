@@ -243,35 +243,44 @@ layout: api
 </article>
 
 
-## Edit Restaurant
 
-`POST /restaurants/:restaurant_id`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title | String | Name of the restaurant. |
-| logo | String | Logo of the restaurant |
-| cover | file | Cover image of the restaurant. |
-| url | String | User friendly URL of the restaurant. |
-| type | [String] | Type of the restaurant. |
-| categories | [String] | Categories of the restaurant. |
-| accepts_reservations | String | Whether the restaurant accepts reservations. |
-| serves_cuisine | [String] | List of cuisines served. |
-| star_rating | String | Star rating of the restaurant. |
-| opening_hours | [String] | Opening Hours. |
-| payment_methods | [String] | List of payment methods accepted. |
-| can_home_deliver | Boolean | Whether home delivers food. |
-| price_range | [String] | Price range of items. |
-| photos | [file] | List of photos. |
-| address | { } | Address details. |
-| contact | { } | Contact details. |
-
-**Response**
-
-{% highlight json %}
-{
+<article id="" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Edit Restaurant</h2>
+		</div>
+		<p>Updates the restaurant details with the given info</p>
+		<div class="ui large blue label">
+			PUT
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:restaurant_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">{
 	"_id": ID,
 	"title": String,
 	"logo": String,
@@ -310,63 +319,180 @@ layout: api
 	    "user_first_name": String,
 	    "user_rating": Number
 	}
-}
-{% endhighlight %}
-
-## Order Recipe
-
-## Order Grocery
-
-`POST /restaurants/order`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| item_id | ID | ID of the store grocery. |
-| quantity | Number | Quantity of the store grocery. |
-
-**Response**
-
-`Status: 201`
+}</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
 
-## Comment Restaurant
+<article id="" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Order Recipe</h2>
+		</div>
+		<p>Places a recipe in the order list.</p>
+		<div class="ui large blue label">
+			PUT
+		</div>
+		<div class="ui large label">
+			/restaurants/order
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-`PUT /restaurants/:store_id`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| comment  | String | Body of the comment. |
-| rating | Number | Rating of the recipe in the order of 1-5 |
-
-**Response**
-
-`Status: 201`
 
 
-## Report Restaurant
+<article id="" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Comment Restaurant</h2>
+		</div>
+		<p>Adds a rating and comment to the specified restaurant.</p>
+		<div class="ui large blue label">
+			PUT
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:restaurant_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-`POST /restaurants/:store_id`
+<article id="" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Report Restaurant</h2>
+		</div>
+		<p>Reports a restaurant.</p>
+		<div class="ui large blue label">
+			PUT
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:restaurant_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-**Parameters**
 
-| Name | Type | Description |
-| --- | --- | --- |
-| reason_type  | String | Type of the report reason. |
-| reason_body  | String | Body of the report reason. |
-
-**Response**
-
-`Status: 201`
-
-
-## Delete Restaurant
-
-`DELETE /restaurants/:store_id`
-
-**Response**
-
-`Status: 204`
+<article id="" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Remove Restaurant</h2>
+		</div>
+		<p>Removes the specified restaurant.</p>
+		<div class="ui large red label">
+			DELETE
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:restaurant_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 204</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
