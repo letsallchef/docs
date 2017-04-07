@@ -1,0 +1,50 @@
+{
+  "title": "Lemon Tea",
+  "description": "Special tea that is good for health.",
+  "url": "lemon-tea",
+  "course": "drinks",
+  "cuisine": "indian",
+  "category": "indian",
+  "yield_number": 1,
+  "yield_unit": "type2",
+  "prep_time": 15,
+  "ease": 4,
+  "ingredients": [
+    {
+      "grocery": "58d5304d7da1b9c9ef6bc2a0",
+      "metric_quantity": 10,
+      "metric_unit": "gram",
+      "note": ""
+    },
+    {
+      "grocery": "58d6558a03e3eb479e8176fd",
+      "metric_quantity": 50,
+      "metric_unit": "gram",
+      "note": ""
+    },
+    {
+      "grocery": "58d8860166bc5854a3ca3117",
+      "metric_quantity": 10,
+      "metric_unit": "gram",
+      "note": ""
+    }
+  ],
+  "instructions": [
+    {
+      "inst_method": "cook",
+      "time_taken": 10,
+      "inst_body": "Prepare for boiling."
+    },
+    {
+      "inst_method": "bake",
+      "time_taken": 5,
+      "inst_body": "Serve the tea !"
+    }
+  ],
+  "nutrition": {
+    "calories": 10,
+    "sugar": 10,
+    "fat": 10,
+    "protein": 10
+  }
+}

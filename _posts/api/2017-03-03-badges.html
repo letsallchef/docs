@@ -1,48 +1,59 @@
 ---
 title: Badges
+brief: "Rating speaks, but badges rule ! Earn them like anything."
 cover: badges.jpg
-endpoints: 2
+endpoints: 4
 categories: api
-layout: api    
+layout: api
 ---
-Rating speaks, but badges rule ! Earn them like anything.
-<!--more-->
-
-## Add Badge
-
-## Search Badges
-
-`GET /badges`
-
-**Response**
-
-{% highlight json %}
-[{
-	"_id": ID,
-	"title": String,
-	"cover": String,
-	"description": String,
-	"for": String
-}]
-{% endhighlight %}
-
-## Get Badge
-
-`GET /badges/:badge_id`
-
-**Response**
-
-{% highlight json %}
-[{
-	"_id": ID,
-	"title": String,
-	"cover": String,
-	"description": String,
-	"for": String
-}]
-{% endhighlight %}
 
 
-## Edit Badge
-
-## Delete Badge
+<article id="search-badges" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Search Badges</h2>
+		</div>
+		<p>Search for badges using the given parameters.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/badges
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">[
+	{
+		"_id": "sdfhg567kajshjkahskjhasd",
+		"title": "Recipe of the month",
+		"cover": "badges-cover-sdfhg567kajshjkahskjhasd.jpg",
+		"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, minus.",
+		"givenTo": "recipes"
+	}
+]</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
