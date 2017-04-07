@@ -1,0 +1,528 @@
+---
+title: Restaurants
+brief: "Know about the menus, reviews and rating of the restaurants nearby."
+cover: restaurants.jpg
+endpoints: 9
+categories: api
+layout: api    
+---
+
+
+<article id="add-restaurant" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Add restaurant</h2>
+		</div>
+		<p>Reggisters a restaurant.</p>
+		<div class="ui large orange label">
+			POST
+		</div>
+		<div class="ui large label">
+			/restaurants
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+							<td><i class="icon checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr><td>title</td><td>String</td><td></td></tr>
+						<tr><td>logo</td><td>String</td><td></td></tr>
+						<tr><td>cover</td><td>String</td><td></td></tr>
+						<tr><td>url</td><td>String</td><td></td></tr>
+						<tr><td>categories</td><td>[String]</td><td></td></tr>
+						<tr><td>accepts_reservations</td><td>Boolean</td><td></td></tr>
+						<tr><td>serves_cuisine</td><td>[String]</td><td></td></tr>
+						<tr><td>star_rating</td><td>Number</td><td></td></tr>
+						<tr><td>opening_hours</td><td><pre><code class="json">[
+    {
+        "open": "Time",
+        "close": "Time"
+    }
+]</code></pre></td><td></td></tr>
+						<tr><td>payment_methods</td><td>[String]</td><td></td></tr>
+						<tr><td>can_home_delever</td><td>Boolean</td><td></td></tr>
+						<tr><td>photos</td><td>[Image]</td><td></td></tr>
+						<tr><td>email</td><td>String</td><td></td></tr>
+						<tr><td>phone</td><td>String</td><td></td></tr>
+						<tr><td>website</td><td>String</td><td></td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="search-restaurant" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Search restaurants</h2>
+		</div>
+		<p>Search for restaurants with given parameters.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/restaurants
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">[
+	{
+		"_id": "8as8das8da8sda9ds8a9sdah",
+		"title": "Kababish",
+		"url": "kababish-bangalore",
+		"cover": "8as8das8da8sda9ds8a9sdah-restaurant-cover.jpg",
+		"url": "kababish-bangalore",
+		"opening_hours": [
+			{
+				"open": "Time",
+				"close": "Time"
+			}
+		],
+		"can_home_delever": true,
+		"address": {
+			"addressLine1": "1st Cross, Bn Road",
+			"addressLine2": "2nd Stage",
+			"landmark": "SBI Bank",
+			"state": "Karnataka",
+			"city": "Bangalore",
+			"district": "Bangalore",
+			"country": "India",
+			"geo": {
+				"latitude": 21.00,
+				"longitude": 34.088
+			}
+		},
+		"email": "kabas=bish-bangalore@gmail.com",
+		"phone": "9797474795",
+		"website": "http://kababish.com",
+		"rating": 4.5
+	}
+]</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="get-restaurant" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Get Restaurant</h2>
+		</div>
+		<p>Get detials of the specified restaurant.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:restaurant_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">{
+	"_id": ID,
+	"title": String,
+	"logo": String,
+	"url": String,
+	"type": [String],
+	"categories": [String],
+	"accepts_reservations": String,
+	"serves_cuisine": [String],
+	"star_rating": String,
+	"opening_hours": [String],
+	"payment_methods": [String],
+	"can_home_delever": Boolean,
+	"price_range": [String],
+	"photos": [String],
+	"badges": [{
+        "badge_id": ID,
+        "badge_name": String,
+        "badge_cover": String,
+        "recieved": DateTime
+    }],
+	"address": {       
+	    "addressLine1": String,
+	    "addressLine2": String,
+	    "landmark": String,
+	    "state": String,
+	    "city": String,
+	    "district": String,
+	    "country": String,
+	    "geo": {
+	        "latitude": Number,
+	        "longitude": Number
+	    }
+	},
+	"contact": {
+	    "email": String,
+	    "phone": String
+	},
+	"owner": {
+	    "user_id": ID,
+	    "user_avatar": String,
+	    "user_username": String,
+	    "user_first_name": String,
+	    "user_rating": Number
+	},
+	"comments": {
+	    "user_id": ID,
+	    "user_avatar": String,
+	    "user_username": String,
+	    "user_first_name": String,
+	    "user_rating": Number,
+	    "comment": String,
+	    "rating": Number
+	}
+}</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="edit-restaurant" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Edit restaurant</h2>
+		</div>
+		<p>Edit details of restaurant.</p>
+		<div class="ui large orange label">
+			POST
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:restaurant_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+							<td><i class="icon checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr><td>title</td><td>String</td><td>Name of the restaurant.</td></tr>
+						<tr><td>logo</td><td>String</td><td>Logo of the retaurant.</td></tr>
+						<tr><td>cover</td><td>Image</td><td>Cover image of the restaurant.</td></tr>
+						<tr><td>url</td><td>String</td><td>User friendly URL of the restaurant.</td></tr>
+						<tr><td>type</td><td>[String]</td><td>Type of the restaurant.</td></tr>
+						<tr><td>categories</td><td>[String]</td><td>Categories of the restaurant.</td></tr>
+						<tr><td>accepts_reservations</td><td>Boolean</td><td>Whether the restaurant accepts reservations.</td></tr>
+						<tr><td>serves_cuisine</td><td>[String]</td><td>List of cuisines served.</td></tr>
+						<tr><td>star_rating</td><td>String</td><td>Star rating of the restaurant.</td></tr>
+						<tr><td>opening_hours</td><td><pre><code class="json">[
+    {
+        "open": "Time",
+        "close": "Time"
+    }
+]</code></pre></td><td></td></tr>
+						<tr><td>payment_methods</td><td>[String]</td><td>Lists of payment methods accepted.</td></tr>
+						<tr><td>can_home_delever</td><td>Boolean</td><td>whether home delivers food.</td></tr>
+						<tr><td>price_range</td><td>[string]</td><td>Prince range of the items.</td></tr>
+						<tr><td>photos</td><td>[file]</td><td>List of photos</td></tr>
+						<tr><td>email</td><td>String</td><td></td></tr>
+						<tr><td>phone</td><td>String</td><td></td></tr>
+						<tr><td>website</td><td>String</td><td></td></tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">[
+    {
+	"_id": ID,
+	"title": String,
+	"logo": String,
+	"url": String,
+	"type": [String],
+	"categories": [String],
+	"accepts_reservations": String,
+	"serves_cuisine": [String],
+	"star_rating": String,
+	"opening_hours": [String],
+	"payment_methods": [String],
+	"can_home_delever": Boolean,
+	"price_range": [String],
+	"photos": [String],
+	"address": {       
+	    "addressLine1": String,
+	    "addressLine2": String,
+	    "landmark": String,
+	    "state": String,
+	    "city": String,
+	    "district": String,
+	    "country": String,
+	    "geo": {
+	        "latitude": Number,
+	        "longitude": Number
+	    }
+	},
+	"contact": {
+	    "email": String,
+	    "phone": String
+	},
+	"owner": {
+	    "user_id": ID,
+	    "user_avatar": String,
+	    "user_username": String,
+	    "user_first_name": String,
+	    "user_rating": Number
+	}
+}
+]</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="order-grocery" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Order Grocery</h2>
+		</div>
+		<p>To order the groceries.</p>
+		<div class="ui large orange label">
+			POST
+		</div>
+		<div class="ui large label">
+			/restaurants/order
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+							<td><i class="icon checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr><td>item_id</td><td>ID</td><td>ID of the store grocery.</td></tr>
+						<tr><td>quantity</td><td>Number</td><td>Quantity of the store grocery.</td></tr>
+					</tbody>
+				</table>
+			</div>		
+	<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="comment-restaurant" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Comment Restaurant</h2>
+		</div>
+		<p>Comment about the restaurant.</p>
+		<div class="ui large blue label">
+			PUT
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:store_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+							<td><i class="icon checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr><td>comment</td><td>String</td><td>Body of the comment.</td></tr>
+						<tr><td>rating</td><td>Number</td><td>Rating of the recipes in the order 1-5.</td></tr>
+					</tbody>
+				</table>
+			</div>		
+	<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="report-restaurant" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Report Restaurant</h2>
+		</div>
+		<p>Report the restaurant.</p>
+		<div class="ui large orange label">
+			POST
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:store_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+							<td><i class="icon checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+						<tr><td>reason-type</td><td>String</td><td>Type of the report reason.</td></tr>
+						<tr><td>reason-body</td><td>String</td><td>Body of the report reason.</td></tr>
+					</tbody>
+				</table>
+			</div>		
+	<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+<article id="delete-restaurant" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Delete Restaurant</h2>
+		</div>
+		<p>Delete the restaurant.</p>
+		<div class="ui large red label">
+			DELETE
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:store_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+							<td><i class="icon checkmark"></i>access_token</td>
+							<td>String</td>
+							<td>A valid access token.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>		
+	<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 204</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
