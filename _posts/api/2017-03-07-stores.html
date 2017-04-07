@@ -7,33 +7,71 @@ categories: api
 layout: api    
 ---
 
-## Add Store
-
-`POST /stores`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title | String | Name of the store. |
-| tagline | String | Tagline or motto of the store. |
-| description | String | Brief description of the store. |
-| logo | file | Logo of the store. |
-| cover | file | Photo of the store. |
-| url | String | User friendly url of the store |
-| plan_name | String | Plan name of store. |
-| opening_hours | String | Opening hours of the store. |
-| payment_methods | [String] | Type of payments accepted by the store. |
-| can_home_deliver | Boolean | Whether they do home delivery. |
-| address | { } | Address of the store. |
-| geo | { } | Geo location details. |
-| contact | { } | Contact details of the store. |
-| is_active | Boolean | Whether the store is active or not. |
-
-**Response**
-
-{% highlight json %}
-"_id": ID,
+<article id="add-store" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Add Store</h2>
+        </div>
+        <p>To add a new store.</p>
+        <div class="ui large orange label">
+            POST
+        </div>
+        <div class="ui large label">
+            /stores
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                            <tr><td><i class="icon green checkmark"></i>title</td><td>String</td><td>Name of the store.</td></tr>
+                        <tr><td>tagline</td><td>String</td><td>Tagline or Motto of the store.</td></tr>
+                        <tr><td>description</td><td>String</td><td>Description of the recipe.</td></tr>
+                        <tr><td>logo</td><td>String</td><td>Logo of the Store.</td></tr>
+                        <tr><td>cover</td><td>Image</td><td>Photo of the store.</td></tr>
+                        <tr><td>url</td><td>String</td><td>Human friendly URL for the store.</td></tr>
+                        <tr><td>plan_name</td><td>String</td><td>Plan name of the store.</td></tr>
+                        <tr><td>opening_hours</td><td><pre><code class="json">[
+    {
+        "open": "Time",
+        "close": "Time"
+    }
+]</code></pre></td><td></td></tr>
+                        <tr><td>payment_methods</td><td>[String]</td><td>Lists of payment methods accepted.</td></tr>
+                        <tr><td>can_home_delever</td><td>Boolean</td><td>whether home delivers food.</td></tr>
+                        <tr><td>adressline1</td><td>String</td><td></td></tr>
+                        <tr><td>addressline2</td><td>String</td><td></td></tr>
+                        <tr><td>landmark</td><td>String</td><td></td></tr>
+                        <tr><td>state</td><td>String</td><td></td></tr>
+                        <tr><td>city</td><td>String</td><td></td></tr>
+                        <tr><td>district</td><td>String</td><td></td></tr>
+                        <tr><td>country</td><td>String</td><td></td></tr>
+                        <tr><td>latitude</td><td>Number</td><td></td></tr>
+                        <tr><td>longitude</td><td>Number</td><td></td></tr>
+                        <tr><td>email</td><td>String</td><td></td></tr>
+                        <tr><td>phone</td><td>String</td><td></td></tr>
+                        <tr><td>is_active</td><td>Boolean</td><td>Whether the store is active or not</td></tr>
+                    </tbody>
+                </table>
+            </div>      
+    <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+    {   "_id": ID,
 "title": String,
 "tagline": String,
 "description": String,
@@ -68,44 +106,113 @@ layout: api
     "user_rating": Number,
     "comment": String,
     "rating": Number
-}]
-{% endhighlight %}
+}
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
 
-## Search Stores
+<article id="search-store" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Search Store</h2>
+        </div>
+        <p>To search the store.</p>
+        <div class="ui large green label">
+            GET
+        </div>
+        <div class="ui large label">
+            /stores
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>      
+    <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+    {
+    "_id": ID,
+    "title": String,
+    "cover": String,
+    "url": String,
+    "opening_hours": String,
+    "can_home_deliver": Boolean,
+    "geo": {
+        "latitude": Number,
+        "longitude": Number
+    },
+    "contact": {
+        "email": String,
+        "phone": String
+    }
+}
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
-`GET /stores`
-
-**Response**
-
-{% highlight json %}
-[{
-	"_id": ID,
-	"title": String,
-	"cover": String,
-	"url": String,
-	"opening_hours": String,
-	"can_home_deliver": Boolean,
-	"geo": {
-	    "latitude": Number,
-	    "longitude": Number
-	},
-	"contact": {
-	    "email": String,
-	    "phone": String
-	}
-}]
-{% endhighlight %}
 
 
-## Get Store
-
-`GET /stores/:store_id`
-
-**Response**
-
-{% highlight json %}
-{
+<article id="get-store" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Get Store</h2>
+        </div>
+        <p>Get the store.</p>
+        <div class="ui large green label">
+            GET
+        </div>
+        <div class="ui large label">
+            /stores/<span class="variable">:store_id</span>/recipes
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>      
+    <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+    {
     "_id": ID,
     "title": String,
     "tagline": String,
@@ -149,64 +256,292 @@ layout: api
         "rating": Number
     }]
 }
-{% endhighlight %}
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
 
-## Edit Store
+<article id="edit-store" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Edit store</h2>
+        </div>
+        <p>Edit details of store.</p>
+        <div class="ui large orange label">
+            POST
+        </div>
+        <div class="ui large label">
+            /stores/<span class="variable">:store_id</span>
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                        <tr><td>title</td><td>String</td><td>Name of the store.</td></tr>
+                        <tr><td>tagline</td><td>String</td><td>Tagline or Motto of the store.</td></tr>
+                        <tr><td>description</td><td>String</td><td>Description of the recipe.</td></tr>
+                        <tr><td>logo</td><td>String</td><td>Logo of the Store.</td></tr>
+                        <tr><td>cover</td><td>Image</td><td>Photo of the store.</td></tr>
+                        <tr><td>url</td><td>String</td><td>Human friendly URL for the store.</td></tr>
+                        <tr><td>plan_name</td><td>String</td><td>Plan name of the store.</td></tr>
+                        <tr><td>opening_hours</td><td><pre><code class="json">[
+    {
+        "open": "Time",
+        "close": "Time"
+    }
+]</code></pre></td><td></td></tr>
+                        <tr><td>payment_methods</td><td>[String]</td><td>Lists of payment methods accepted.</td></tr>
+                        <tr><td>can_home_delever</td><td>Boolean</td><td>whether home delivers food.</td></tr>
+                        <tr><td>adressline1</td><td>String</td><td></td></tr>
+                        <tr><td>addressline2</td><td>String</td><td></td></tr>
+                        <tr><td>landmark</td><td>String</td><td></td></tr>
+                        <tr><td>state</td><td>String</td><td></td></tr>
+                        <tr><td>city</td><td>String</td><td></td></tr>
+                        <tr><td>district</td><td>String</td><td></td></tr>
+                        <tr><td>country</td><td>String</td><td></td></tr>
+                        <tr><td>latitude</td><td>Number</td><td></td></tr>
+                        <tr><td>longitude</td><td>Number</td><td></td></tr>
+                        <tr><td>email</td><td>String</td><td></td></tr>
+                        <tr><td>phone</td><td>String</td><td></td></tr>
+                        <tr><td>is_active</td><td>Boolean</td><td>Whether the store is active or not</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">[
+{   "_id": ID,
+"title": String,
+"tagline": String,
+"description": String,
+"logo": String,
+"cover": String,
+"url": String,
+"opening_hours": String,
+"payment_methods": [String],
+"can_home_deliver": Boolean,
+"address": {
+    "addressLine1": String,
+    "addressLine2": String,
+    "landmark": String,
+    "state": String,
+    "city": String,
+    "district": String,
+    "country": String,
+    "geo": {
+        "latitude": Number,
+        "longitude": Number
+    }
+},
+"contact": {
+    "email": String,
+    "phone": String
+},
+"comments": [{
+    "user_id": ID,
+    "user_avatar": String,
+    "user_username": String,
+    "user_first_name": String,
+    "user_rating": Number,
+    "comment": String,
+    "rating": Number
+}
+]</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
 
-## Order Grocery
+<article id="order-grocery" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Order Grocery</h2>
+        </div>
+        <p>To order the groceries.</p>
+        <div class="ui large orange label">
+            POST
+        </div>
+        <div class="ui large label">
+            /stores/order
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                        <tr><td>item_id</td><td>ID</td><td>ID of the store grocery.</td></tr>
+                        <tr><td>quantity</td><td>Number</td><td>Quantity of the store grocery.</td></tr>
+                    </tbody>
+                </table>
+            </div>      
+    <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">Status: 201</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
-`POST /stores/order`
+<article id="comment-store" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Comment Store</h2>
+        </div>
+        <p>Comment about the store.</p>
+        <div class="ui large blue label">
+            PUT
+        </div>
+        <div class="ui large label">
+            /stores/<span class="variable">:store_id</span>
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                        <tr><td>comment</td><td>String</td><td>Body of the comment.</td></tr>
+                        <tr><td>rating</td><td>Number</td><td>Rating of the recipes in the order 1-5.</td></tr>
+                    </tbody>
+                </table>
+            </div>      
+    <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">Status: 201</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
-**Parameters**
 
-| Name | Type | Description |
-| --- | --- | --- |
-| item_id | ID | ID of the store grocery. |
-| quantity | Number | Quantity of the store grocery. |
+<article id="report-store" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Report Store</h2>
+        </div>
+        <p>Report the Store.</p>
+        <div class="ui large orange label">
+            POST
+        </div>
+        <div class="ui large label">
+            /stores/<span class="variable">:store_id</span>
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                        <tr><td>reason-type</td><td>String</td><td>Type of the report reason.</td></tr>
+                        <tr><td>reason-body</td><td>String</td><td>Body of the report reason.</td></tr>
+                    </tbody>
+                </table>
+            </div>      
+    <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">Status: 201</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
 
-**Response**
 
-`Status: 201`
-
-
-## Comment Store
-
-`PUT /stores/:store_id`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| comment  | String | Body of the comment. |
-| rating | Number | Rating of the recipe in the order of 1-5 |
-
-**Response**
-
-`Status: 201`
-
-
-## Report Store
-
-`POST /stores/:store_id`
-
-**Parameters**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| reason_type  | String | Type of the report reason. |
-| reason_body  | String | Body of the report reason. |
-
-**Response**
-
-`Status: 201`
-
-
-## Delete Store
-
-`DELETE /stores/:store_id`
-
-**Response**
-
-`Status: 204`
+<article id="delete-store" class="api">
+    <div class="ui attached message">
+        <div class="header">
+            <h2 class="ui header">Delete store</h2>
+        </div>
+        <p>Delete the store.</p>
+        <div class="ui large red label">
+            DELETE
+        </div>
+        <div class="ui large label">
+            /stores/<span class="variable">:store_id</span>
+        </div>
+    </div>
+    <div class="ui attached fluid segment">
+        <p></p>
+        <div class="ui styled fluid accordion">
+            <div class="title">
+                <i class="dropdown icon"></i>
+                Parameters
+            </div>
+            <div class="content">
+                <table class="ui celled striped table">
+                    <tbody>
+                        <tr>
+                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td>String</td>
+                            <td>A valid access token.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>      
+    <div class="title">
+                <i class="dropdown icon"></i>
+                Response
+            </div>
+            <div class="content">
+                <pre><code class="json">Status: 204</code></pre>
+            </div>
+        </div>
+    </div>
+</article>
