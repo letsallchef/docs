@@ -70,44 +70,7 @@ layout: api
                 Response
             </div>
             <div class="content">
-                <pre><code class="json">[
-    {   "_id": ID,
-"title": String,
-"tagline": String,
-"description": String,
-"logo": String,
-"cover": String,
-"url": String,
-"opening_hours": String,
-"payment_methods": [String],
-"can_home_deliver": Boolean,
-"address": {
-    "addressLine1": String,
-    "addressLine2": String,
-    "landmark": String,
-    "state": String,
-    "city": String,
-    "district": String,
-    "country": String,
-    "geo": {
-        "latitude": Number,
-        "longitude": Number
-    }
-},
-"contact": {
-    "email": String,
-    "phone": String
-},
-"comments": [{
-    "user_id": ID,
-    "user_avatar": String,
-    "user_username": String,
-    "user_first_name": String,
-    "user_rating": Number,
-    "comment": String,
-    "rating": Number
-}
-]</code></pre>
+                <pre><code class="json">Status: 201</code></pre>
             </div>
         </div>
     </div>
@@ -269,8 +232,8 @@ layout: api
             <h2 class="ui header">Edit store</h2>
         </div>
         <p>Edit details of store.</p>
-        <div class="ui large orange label">
-            POST
+        <div class="ui large blue label">
+            PUT
         </div>
         <div class="ui large label">
             /stores/<span class="variable">:store_id</span>
@@ -326,44 +289,7 @@ layout: api
                 Response
             </div>
             <div class="content">
-                <pre><code class="json">[
-{   "_id": ID,
-"title": String,
-"tagline": String,
-"description": String,
-"logo": String,
-"cover": String,
-"url": String,
-"opening_hours": String,
-"payment_methods": [String],
-"can_home_deliver": Boolean,
-"address": {
-    "addressLine1": String,
-    "addressLine2": String,
-    "landmark": String,
-    "state": String,
-    "city": String,
-    "district": String,
-    "country": String,
-    "geo": {
-        "latitude": Number,
-        "longitude": Number
-    }
-},
-"contact": {
-    "email": String,
-    "phone": String
-},
-"comments": [{
-    "user_id": ID,
-    "user_avatar": String,
-    "user_username": String,
-    "user_first_name": String,
-    "user_rating": Number,
-    "comment": String,
-    "rating": Number
-}
-]</code></pre>
+                <pre><code class="json">Status: 201</code></pre>
             </div>
         </div>
     </div>
@@ -376,8 +302,8 @@ layout: api
             <h2 class="ui header">Order Grocery</h2>
         </div>
         <p>To order the groceries.</p>
-        <div class="ui large orange label">
-            POST
+        <div class="ui large blue label">
+            PUT
         </div>
         <div class="ui large label">
             /stores/order
@@ -413,6 +339,8 @@ layout: api
         </div>
     </div>
 </article>
+
+
 
 <article id="comment-store" class="api">
     <div class="ui attached message">
@@ -459,14 +387,15 @@ layout: api
 </article>
 
 
+
 <article id="report-store" class="api">
     <div class="ui attached message">
         <div class="header">
             <h2 class="ui header">Report Store</h2>
         </div>
         <p>Report the Store.</p>
-        <div class="ui large orange label">
-            POST
+        <div class="ui large blue label">
+            PUT
         </div>
         <div class="ui large label">
             /stores/<span class="variable">:store_id</span>
@@ -502,6 +431,7 @@ layout: api
         </div>
     </div>
 </article>
+
 
 
 <article id="delete-store" class="api">
@@ -540,7 +470,7 @@ layout: api
                 Response
             </div>
             <div class="content">
-                <pre><code class="json">Status: 204</code></pre>
+                <pre><code class="json">Status: 200</code></pre>
             </div>
         </div>
     </div>
