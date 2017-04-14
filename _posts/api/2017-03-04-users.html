@@ -30,12 +30,12 @@ layout: api
             <div class="content">
                 <table class="ui celled striped table">
                     <tr>
-                        <td><i class="icon checkmark"></i>username</td>
+                        <td class="required"></i>username</td>
                         <td>String</td>
                         <td>Username of the user logging in.</td>
                     </tr>
                     <tr>
-                        <td><i class="icon checkmark"></i>password</td>
+                        <td class="required"></i>password</td>
                         <td>String</td>
                         <td>Password of the user loggin in.</td>
                     </tr>
@@ -79,7 +79,7 @@ layout: api
             <div class="content">
                 <table class="ui celled striped table">
                     <tr>
-                        <td><i class="icon checkmark"></i>access_token</td>
+                        <td class="required"></i>access_token</td>
                         <td>String</td>
                         <td>A valid access token.</td>
                     </tr>
@@ -120,11 +120,73 @@ layout: api
             </div>
             <div class="content">
                 <table class="ui celled striped table">
-                    <tbody>
-                        <tr><td><i class="icon checkmark"></i>username</td><td>String</td><td>Username of the user.</td></tr>
-                        <tr><td><i class="icon checkmark"></i>email</td><td>String</td><td>Email ID of the user.</td></tr>
-                        <tr><td><i class="icon checkmark"></i>password</td><td>String</td><td>Login Password of the user.</td></tr>
-                        </tbody>
+                    <thead>
+                        <tr>
+                          <th>Key</th>
+                          <th>Type</th>
+                          <th>Description</th>
+                      </tr>  
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td class="required">username</td>
+                        <td>String</td>
+                        <td>Username for the user.</td>
+                    </tr>
+                    <tr>
+                        <td class="required">password</td>
+                        <td>String</td>
+                        <td>Password for the account. Mininum 9 characters.</td>
+                    </tr>
+                    <tr>
+                        <td class="required">email</td>
+                        <td>String</td>
+                        <td>Email address of the user.</td>
+                    </tr>
+                    <tr>
+                        <td>first_name</td>
+                        <td>String</td>
+                        <td>User's firstname.</td>
+                    </tr>
+                    <tr>
+                        <td>last_name</td>
+                        <td>String</td>
+                        <td>User's lastname.</td>
+                    </tr>
+                    <tr>
+                        <td>gender</td>
+                        <td>String</td>
+                        <td>Gender of the user.</td>
+                    </tr>
+                    <tr>
+                        <td>date_of_birth</td>
+                        <td>String</td>
+                        <td>User's date of birth.</td>
+                    </tr>
+                    <tr>
+                        <td>phone</td>
+                        <td>String</td>
+                        <td>User's phone number.</td>
+                    </tr>
+                    <tr>
+                        <td>address</td>
+                        <td><pre><code class="json">{
+    alias: String,
+    addressLine1: String,
+    addressLine2: String,
+    landmark: String,
+    city: String,
+    district: String,
+    country: String,
+    zip: String,
+    loc: String{
+        longitude: Number,
+        latitude: Number
+    }
+}</code></pre></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="title">
@@ -164,7 +226,7 @@ layout: api
                 <table class="ui celled striped table">
                     <tbody>
                         <tr>
-                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td class="required"></i>access_token</td>
                             <td>String</td>
                             <td>A valid access token.</td>
                         </tr>
@@ -221,7 +283,7 @@ layout: api
         <div class="content">
             <table class="ui celled striped table">
                 <tr>
-                    <td><i class="icon checkmark"></i>access_token</td>
+                    <td class="required"></i>access_token</td>
                     <td>String</td>
                     <td>A valid access token.</td>
                 </tr>
@@ -324,7 +386,7 @@ layout: api
                 <table class="ui celled striped table">
                     <tbody>
                         <tr>
-                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td class="required"></i>access_token</td>
                             <td>String</td>
                             <td>A valid access token.</td>
                         </tr>
@@ -383,7 +445,7 @@ layout: api
             <div class="content">
                 <table class="ui celled striped table">
                     <tr>
-                        <td><i class="icon checkmark"></i>access_token</td>
+                        <td class="required"></i>access_token</td>
                         <td>String</td>
                         <td>A valid access token.</td>
                     </tr>
@@ -434,7 +496,7 @@ layout: api
             <div class="content">
                 <table class="ui celled striped table">
                     <tr>
-                        <td><i class="icon checkmark"></i>access_token</td>
+                        <td class="required"></i>access_token</td>
                         <td>String</td>
                         <td>A valid access token.</td>
                     </tr>
@@ -476,7 +538,7 @@ layout: api
                 <table class="ui celled striped table">
                     <tbody>
                         <tr>
-                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td class="required"></i>access_token</td>
                             <td>String</td>
                             <td>A valid access token.</td>
                         </tr>
@@ -519,7 +581,7 @@ layout: api
                 <table class="ui celled striped table">
                     <tbody>
                         <tr>
-                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td class="required"></i>access_token</td>
                             <td>String</td>
                             <td>A valid access token.</td>
                         </tr>
@@ -568,7 +630,7 @@ layout: api
                 <table class="ui celled striped table">
                     <tbody>
                         <tr>
-                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td class="required"></i>access_token</td>
                             <td>String</td>
                             <td>A valid access token.</td>
                         </tr>
@@ -618,7 +680,7 @@ layout: api
                 <table class="ui celled striped table">
                     <tbody>
                         <tr>
-                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td class="required"></i>access_token</td>
                             <td>String</td>
                             <td>A valid access token.</td>
                         </tr>
@@ -667,7 +729,7 @@ layout: api
                 <table class="ui celled striped table">
                     <tbody>
                         <tr>
-                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td class="required"></i>access_token</td>
                             <td>String</td>
                             <td>A valid access token.</td>
                         </tr>
@@ -718,7 +780,7 @@ layout: api
                 <table class="ui celled striped table">
                     <tbody>
                      <tr>
-                        <td><i class="icon checkmark"></i>access_token</td>
+                        <td class="required"></i>access_token</td>
                         <td>String</td>
                         <td>A valid access token.</td>
                     </tr>
@@ -770,7 +832,7 @@ layout: api
             <div class="content">
                 <table class="ui celled striped table">
                    <tr>
-                    <td><i class="icon checkmark"></i>access_token</td>
+                    <td class="required"></i>access_token</td>
                     <td>String</td>
                     <td>A valid access token.</td>
                 </tr>
@@ -823,7 +885,7 @@ layout: api
                 <table class="ui celled striped table">
                     <tbody>
                         <tr>
-                            <td><i class="icon checkmark"></i>access_token</td>
+                            <td class="required"></i>access_token</td>
                             <td>String</td>
                             <td>A valid access token.</td>
                         </tr>

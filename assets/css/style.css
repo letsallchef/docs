@@ -17,3 +17,7 @@ header.page-head{
 #api{
 	margin-top: 10px;
 }
+
+.ui.table .required{
+	color: #f66;
+}
