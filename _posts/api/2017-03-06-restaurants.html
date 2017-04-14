@@ -380,7 +380,66 @@ layout: api
 			PUT
 		</div>
 		<div class="ui large label">
-			/restaurants/<span class="variable">:restaurant_id</span>
+			/restaurants/<span class="variable">:restaurant_id</span>/comments
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>title</td>
+                    		<td>String</td>
+                    		<td>Brief about the comment.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>body</td>
+                    		<td>String</td>
+                    		<td>Body of the comment.</td>
+                    	</tr>
+                    	<tr>
+                    		<td>rating</td>
+                    		<td>Number</td>
+                    		<td>Rating of the restaurant.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">Status: 201</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
+
+
+
+<article id="get-comments" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Get Comments</h2>
+		</div>
+		<p>Get the comments of the specified restaurant.</p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/restaurants/<span class="variable">:restaurant_id</span>/comments
 		</div>
 	</div>
 	<div class="ui attached fluid segment">
@@ -406,7 +465,24 @@ layout: api
 				Response
 			</div>
 			<div class="content">
-				<pre><code class="json">Status: 201</code></pre>
+				<pre><code class="json">{
+  "_id": "58eafdb86a749b66909b87de",
+  "title": "Hom Resto",
+  "description": "THis is all about",
+  "comments": [
+    {
+      "_id": "58eb305837dc570c08f2683f",
+      "user": {
+        "_id": "58e5e3158fee4035937a2429",
+        "username": "shajanjp",
+        "first_name": "Shajan"
+      },
+      "title": "Hello comment",
+      "body": "I really dont like that one",
+      "rating": "4"
+    }
+  ]
+}</code></pre>
 			</div>
 		</div>
 	</div>
