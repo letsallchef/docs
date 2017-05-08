@@ -262,16 +262,50 @@ layout: api
 	    "user_email": String,
 	    "user_phone": String
 	    }
-}]
-{% endhighlight %}
+}]</code></pre>
+			</div>
+		</div>
+	</div>
+</article>
 
-## Get Order
 
-`GET /orders/:order_id`
-
-**Response**
-{% highlight json %}
-{
+<article id="get-order" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">Get Order</h2>
+		</div>
+		<p></p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/orders/<span class="variable">:order_id</span>
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">{
 	"_id": ID,
 	"restaurant_id": ID,
 	"item": {
