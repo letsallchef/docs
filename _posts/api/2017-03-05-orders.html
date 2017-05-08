@@ -7,14 +7,43 @@ categories: api
 layout: api    
 ---
 
-## List My Orders
-
-`GET /me/orders`
-
-**Response**
-
-{% highlight json %}
-[{
+<article id="list-my-orders" class="api">
+	<div class="ui attached message">
+		<div class="header">
+			<h2 class="ui header">List My Orders</h2>
+		</div>
+		<p></p>
+		<div class="ui large green label">
+			GET
+		</div>
+		<div class="ui large label">
+			/me/orders
+		</div>
+	</div>
+	<div class="ui attached fluid segment">
+		<p></p>
+		<div class="ui styled fluid accordion">
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Parameters
+			</div>
+			<div class="content">
+				<table class="ui celled striped table">
+					<tbody>
+						<tr>
+	                        <td><i class="icon checkmark"></i>access_token</td>
+	                        <td>String</td>
+	                        <td>A valid access token.</td>
+                    	</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="title">
+				<i class="dropdown icon"></i>
+				Response
+			</div>
+			<div class="content">
+				<pre><code class="json">[{
 	"_id": ID,
 	"store_id": ID,
 	"restaurant_id": ID,
