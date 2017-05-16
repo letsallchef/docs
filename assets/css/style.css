@@ -32,3 +32,6 @@ header.page-head{
 #home-page .column{
 	max-width: 450px;
 }
+#home-page .segment{
+	background-color: rgba(0, 0, 0, 0.3);
+}
