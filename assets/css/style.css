@@ -21,3 +21,14 @@ header.page-head{
 .ui.table .required{
 	color: #2A2;
 }
+
+#home-page{
+	height: 100%;
+	background-image: url('../img/lets-all-chef-drink-recipe.jpeg');
+	background-size: cover;
+	background-position: center center;
+	margin: 0px;
+}
+#home-page .column{
+	max-width: 450px;
+}
